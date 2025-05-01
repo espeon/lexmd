@@ -381,8 +381,8 @@ async function main() {
       recursive: true,
     });
     const jsonFiles = dirents
-      .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".json"))
-      .map((dirent) => path.join(dirent.parentPath, dirent.name));
+      .filter((dirent: any) => dirent.isFile() && dirent.name.endsWith(".json"))
+      .map((dirent: any) => path.join(dirent.parentPath, dirent.name));
 
     if (jsonFiles.length === 0) {
       console.warn(`No .json files found in ${inputDir}`);
