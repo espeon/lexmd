@@ -36,9 +36,9 @@ export default config;
 ```
 
 *   **`prefixLinkTable`**:
-    *   Keys are the first two segments of a Lexicon ID (e.g., `"com.atproto"`).
+    *   Keys are the first two segments of a Lexicon NSID (e.g., `"com.atproto"`).
     *   Values are either:
-        *   A function `(nsid: string) => string` that takes the full Lexicon ID and returns the desired Markdown link URL.
+        *   A function `(nsid: string) => string` that takes the full Lexicon NSID and returns the desired Markdown link URL.
         *   `null` to indicate no special linking; the reference will just be displayed as code (`\`com.atproto.repo.strongRef\``).
 *   **`includeSourceJson`**:
     *   `true`: Appends the original Lexicon JSON definition in a fenced code block at the end of the Markdown.
@@ -67,7 +67,7 @@ deno run --allow-read --allow-write lexToMd/main.ts ./lexicons ./docs/reference
 
 ## Linking Behavior
 
-*   **Internal References:** References within the same document (starting with `#`, e.g., `#/defs/main`) are linked to the corresponding definition's anchor tag within that document. Anchor names are generated from the definition key (e.g., `main`).
+*   **Internal References:** References within the same document (starting with `#`, e.g., `#main`) are linked to the corresponding definition's anchor tag within that document. Anchor names are generated from the definition key (e.g., `main`).
 *   **External References:** References to other Lexicons (e.g., `com.atproto.repo.strongRef`) are handled based on the `prefixLinkTable` in `config.ts`:
     *   If a matching prefix (e.g., `com.atproto`) has a function defined, that function generates the link URL.
     *   If the prefix is `null` or not found in the table, the reference is displayed as inline code without a link.
