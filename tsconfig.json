@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2020", // Target modern Node.js versions
+    "module": "CommonJS", // Node.js standard module system
+    "lib": ["ES2020"], // Include ES2020 library features
+    "outDir": "./dist", // Output directory for compiled JS files
+    "rootDir": "./lexToMd", // Source directory containing your TS files
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Enables compatibility between CommonJS and ES Modules
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
+    "resolveJsonModule": true, // Allows importing JSON files (if needed by config.ts)
+
+    /* Module Resolution Options */
+    "moduleResolution": "node", // Use Node.js style module resolution
+
+    /* Source Map Options */
+    "sourceMap": true, // Generate source maps for debugging
+
+    /* Declaration Files */
+    "declaration": true, // Generate corresponding '.d.ts' files.
+    "declarationMap": true // Generate sourcemaps for d.ts files.
+  },
+  "include": [
+    "lexToMd/**/*" // Include all files in the lexToMd directory
+  ],
+  "exclude": [
+    "node_modules", // Exclude node_modules
+    "dist" // Exclude the output directory
+  ]
+}

@@ -31,36 +31,32 @@ export interface Config {
 
 const config: Config = {
   prefixLinkTable: {
-    // Example: Link place.stream definitions to a specific path structure
-    // replacing all dots for starlight/astro file-based routing reasons
     "place.stream": (nsid: string) => {
       return `/lex-reference/${nsid.toLowerCase().replaceAll(".", "-")}`;
     },
-    // https://github.com/bluesky-social/atproto/tree/main/lexicons
-    // Prefixes with null will not generate special links
     "app.bsky": (nsid: string) => {
       const [prefix, suffix] = nsid.split("#");
-      return `https://github.com/bluesky-social/atproto/tree/main/lexicons/${
-        prefix.toLowerCase().replaceAll(".", "/")
-      }.json#${suffix}`;
+      return `https://github.com/bluesky-social/atproto/tree/main/lexicons/${prefix
+        .toLowerCase()
+        .replaceAll(".", "/")}.json#${suffix}`;
     },
     "chat.bsky": (nsid: string) => {
       const [prefix, suffix] = nsid.split("#");
-      return `https://github.com/bluesky-social/atproto/tree/main/lexicons/${
-        prefix.toLowerCase().replaceAll(".", "/")
-      }.json#${suffix}`;
+      return `https://github.com/bluesky-social/atproto/tree/main/lexicons/${prefix
+        .toLowerCase()
+        .replaceAll(".", "/")}.json#${suffix}`;
     },
     "com.atproto": (nsid: string) => {
       const [prefix, suffix] = nsid.split("#");
-      return `https://github.com/bluesky-social/atproto/tree/main/lexicons/${
-        prefix.toLowerCase().replaceAll(".", "/")
-      }.json#${suffix}`;
+      return `https://github.com/bluesky-social/atproto/tree/main/lexicons/${prefix
+        .toLowerCase()
+        .replaceAll(".", "/")}.json#${suffix}`;
     },
     "tools.ozone": (nsid: string) => {
       const [prefix, suffix] = nsid.split("#");
-      return `https://github.com/bluesky-social/atproto/tree/main/lexicons/${
-        prefix.toLowerCase().replaceAll(".", "/")
-      }.json#${suffix}`;
+      return `https://github.com/bluesky-social/atproto/tree/main/lexicons/${prefix
+        .toLowerCase()
+        .replaceAll(".", "/")}.json#${suffix}`;
     },
   },
   defaultLexiconSeparator: "-",

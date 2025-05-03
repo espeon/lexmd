@@ -1,13 +1,11 @@
-import * as BskyLex from "./types.ts"; // This will be adjusted below
-import config from "./config.ts"; // Import the configuration
+import * as BskyLex from "./types.ts";
+import config from "./config.ts";
 
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
+import { Dirent } from "node:fs";
 
-// Use the prefix table from the configuration
 const PREFIX_TABLE = config.prefixLinkTable;
-
-// --- Helper Functions ---
 
 function formatType(
   prop:
@@ -25,7 +23,8 @@ function formatType(
         const prefix = `${tld}.${domain}`;
         // Use the configured prefix table
         const linkFormatter = PREFIX_TABLE[prefix];
-        if (linkFormatter) { // Check if the formatter function exists
+        if (linkFormatter) {
+          // Check if the formatter function exists
           return `[\`${prop.ref}\`](${linkFormatter(prop.ref)})`;
         } else {
           // No formatter defined or prefix not in table
@@ -121,7 +120,7 @@ function renderSchema(
     | BskyLex.LexXrpcBody["schema"]
     | BskyLex.LexXrpcSubscriptionMessage["schema"]
     | undefined,
-  headerLevel: number, // Note: headerLevel is not currently used here
+  headerLevel: number,
 ): string {
   if (!schema) return "_Schema not defined._";
 
@@ -138,12 +137,13 @@ function renderSchema(
     md += `**Schema Type:** ${formatType(schema)}\n\n`;
     if (schema.description) md += `${schema.description}\n\n`;
   } else {
-    // Handle other simple schema types directly if needed,
-    // otherwise fallback to a generic message.
+    // fall back
     const constraints = formatConstraints(schema);
     md += `**Schema Type:** ${formatType(schema)}\n\n`;
     if (constraints) md += `**Constraints:**<br/>${constraints}\n\n`;
-    // console.warn(`Unhandled schema type in renderSchema: ${schema.type}`);
+    console.warn(
+      `Schema type not handled as schema does not seem to exist: ${schema}`,
+    );
   }
   return md;
 }
@@ -153,7 +153,7 @@ function renderPropertiesTable(
     | BskyLex.LexObject["properties"]
     | BskyLex.LexXrpcParameters["properties"],
   required: string[] = [],
-  nullable: string[] = [], // Added for LexObject
+  nullable: string[] = [],
 ): string {
   if (!properties || Object.keys(properties).length === 0) {
     return "_(No properties defined)_";
@@ -171,8 +171,8 @@ function renderPropertiesTable(
     const propName = `\`${name}\``;
     const propType = formatType(prop);
     const isRequired = required.includes(name) ? "✅" : "❌";
-    // Only show nullable for object properties, not parameters
-    const isNullable = (nullable && nullable.includes(name)) ? "✅" : "n/a";
+    // Only show nullable when applicable
+    const isNullable = nullable && nullable.includes(name) ? "✅" : "n/a";
     const description = prop.description?.replace(/\n/g, "<br/>") || "";
     // TODO: find out the actual type of prop
     // works fine, but...
@@ -232,7 +232,7 @@ description: ${lexicon.description ?? `Reference for the ${lexicon.id} lexicon`}
         md += renderPropertiesTable(
           def.properties,
           def.required || [],
-          def.nullable || [], // Pass nullable here
+          def.nullable || [],
         );
         md += `\n`;
         break;
@@ -242,7 +242,7 @@ description: ${lexicon.description ?? `Reference for the ${lexicon.id} lexicon`}
       case "subscription":
         if (
           def.parameters &&
-          def.parameters.properties && // Check properties exist
+          def.parameters.properties &&
           Object.keys(def.parameters.properties).length > 0
         ) {
           md += `**Parameters:**\n\n`;
@@ -305,7 +305,6 @@ description: ${lexicon.description ?? `Reference for the ${lexicon.id} lexicon`}
       }
 
       case "token":
-        // Tokens usually just have a description, already handled above.
         break;
 
       case "string":
@@ -333,35 +332,34 @@ description: ${lexicon.description ?? `Reference for the ${lexicon.id} lexicon`}
       default:
         console.warn(
           `Unhandled definition type for markdown generation: ${
-            (def as any).type // Use type assertion carefully
+            (def as any).type
           } in ${lexicon.id}`,
         );
         break;
     }
-    md += `\n---\n\n`; // Separator between definitions
+    md += `\n---\n\n`;
   }
 
-  // Conditionally append the source JSON based on config
   if (config.includeSourceJson) {
-    md += "## Lexicon Source\n```json\n" + JSON.stringify(lexicon, null, 2) +
+    md +=
+      "## Lexicon Source\n```json\n" +
+      JSON.stringify(lexicon, null, 2) +
       "\n```\n";
   }
 
   return md;
 }
 
-// --- Main Execution Logic ---
-
 async function main() {
-  const args = Deno.args;
+  const args = process.argv.slice(2);
+
   if (args.length !== 2) {
+    console.error("Usage: lexmd <input-dir> <output-dir>");
     console.error(
-      "Usage: deno run --allow-read --allow-write lexToMd/main.ts <input-dir> <output-dir>", // Updated usage
+      `\nEnsure the import paths in main.ts (or .js) match compiled output or TS config.`,
     );
-    console.error(
-      `\nEnsure the import path in main.ts matches config.typesImportPath ('${config.typesImportPath}')`,
-    );
-    Deno.exit(1);
+    console.error(`Using Types Import Path Hint: ${config.typesImportPath}`);
+    process.exit(1);
   }
 
   const inputDir = path.resolve(args[0]);
@@ -373,27 +371,31 @@ async function main() {
   console.log(`Using Types Import Path Hint: ${config.typesImportPath}`);
 
   try {
+    // Use Node's fs.mkdir
     await fs.mkdir(outputDir, { recursive: true });
     console.log(`Ensured output directory exists: ${outputDir}`);
 
-    const dirents = await fs.readdir(inputDir, {
+    const dirents: Dirent[] = await fs.readdir(inputDir, {
       withFileTypes: true,
       recursive: true,
     });
+
+    //  filter and map, then construct full file path
     const jsonFiles = dirents
-      .filter((dirent: any) => dirent.isFile() && dirent.name.endsWith(".json"))
-      .map((dirent: any) => path.join(dirent.parentPath, dirent.name));
+      .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".json"))
+      .map((dirent) => path.join(inputDir, dirent.name));
 
     if (jsonFiles.length === 0) {
-      console.warn(`No .json files found in ${inputDir}`);
+      console.warn(`No .json files found in ${inputDir} or its subdirectories`);
       return;
     }
 
-    console.log(`Found ${jsonFiles.length} JSON files. Processing...`);
+    console.log(
+      `Found ${jsonFiles.length} JSON files recursively. Processing...`,
+    );
 
-    for (const inputFilePath of jsonFiles) { // Renamed for clarity
-      // Generate output filename based on lexicon ID (sanitized)
-      let outputFileName = path.basename(inputFilePath, ".json") + ".md"; // Default
+    for (const inputFilePath of jsonFiles) {
+      let outputFileName = path.basename(inputFilePath, ".json") + ".md";
 
       console.log(`Processing ${inputFilePath}...`);
 
@@ -401,46 +403,48 @@ async function main() {
         const fileContent = await fs.readFile(inputFilePath, "utf-8");
         const jsonData = JSON.parse(fileContent);
 
-        // --- Zod Validation ---
-        // Note: Using BskyLex imported at the top, ensure it's correct
+        // validate
         const parseResult = BskyLex.lexiconDoc.safeParse(jsonData);
 
         if (!parseResult.success) {
           console.warn(
             `Skipping ${inputFilePath}: Invalid Lexicon format. Errors:`,
-            parseResult.error.flatten(), // Log flattened errors for readability
+            parseResult.error.flatten(),
           );
-          continue; // Skip this file
+          continue;
         }
-        // --- End Validation ---
 
-        const lexiconData = parseResult.data; // Use validated data
+        const lexiconData = parseResult.data;
 
-        // Generate a cleaner filename from the lexicon ID
-        const sanitizedId = lexiconData.id.toLowerCase().replace(
-          /[^a-z0-9-]/g,
-          config.defaultLexiconSeparator,
-        ); // Sanitize for filename
+        // sanitize and replace separators
+        const sanitizedId = lexiconData.id
+          .toLowerCase()
+          .replace(/[^a-z0-9-]/g, config.defaultLexiconSeparator);
         outputFileName = `${sanitizedId}.md`;
-        const specificOutputFilePath = path.join(outputDir, outputFileName);
 
-        // Ensure the specific output directory exists (needed if IDs contain '/')
-        // Although we sanitized '/' away, this is good practice if that changes
-        await fs.mkdir(path.dirname(specificOutputFilePath), {
+        const relativePath = path.relative(
+          inputDir,
+          path.dirname(inputFilePath),
+        );
+        const specificOutputDir = path.join(outputDir, relativePath);
+        const specificOutputFilePath = path.join(
+          specificOutputDir,
+          outputFileName,
+        );
+
+        await fs.mkdir(specificOutputDir, {
           recursive: true,
         });
 
         const markdownContent = generateMarkdown(lexiconData);
         await fs.writeFile(specificOutputFilePath, markdownContent);
-        console.log(`  -> Generated ${specificOutputFilePath}`); // Log full path
+        console.log(`  -> Generated ${specificOutputFilePath}`);
       } catch (error: any) {
         console.error(
           `Error processing file ${inputFilePath}: ${error.message}`,
         );
         if (error instanceof SyntaxError) {
-          console.error(
-            "   This might be due to invalid JSON format.",
-          );
+          console.error("   This might be due to invalid JSON format.");
         }
         console.error(error.stack);
       }
@@ -448,12 +452,11 @@ async function main() {
 
     console.log("Processing complete.");
   } catch (error: any) {
-    // Catch errors like readdir failing
     console.error(
       `An error occurred during setup or file listing: ${error.message}`,
     );
-    // console.error(error.stack); // Optional: Log stack trace
-    Deno.exit(1);
+    console.error(error.stack);
+    process.exit(1);
   }
 }
 

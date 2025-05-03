@@ -440,8 +440,7 @@ export const lexiconDoc = z
       ) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
-          message:
-            `Records, procedures, queries, and subscriptions must be the main definition.`,
+          message: `Records, procedures, queries, and subscriptions must be the main definition.`,
         });
       }
     }
@@ -471,13 +470,13 @@ export function parseLexiconDoc(v: unknown): LexiconDoc {
 
 export type ValidationResult<V = unknown> =
   | {
-    success: true;
-    value: V;
-  }
+      success: true;
+      value: V;
+    }
   | {
-    success: false;
-    error: ValidationError;
-  };
+      success: false;
+      error: ValidationError;
+    };
 
 export class ValidationError extends Error {}
 export class InvalidLexiconError extends Error {}
