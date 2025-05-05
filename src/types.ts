@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 import { NSID } from "@atproto/syntax";
-import { requiredPropertiesRefinement } from "./util.ts";
+import { requiredPropertiesRefinement } from "./util.js";
 
 // primitives
 // =

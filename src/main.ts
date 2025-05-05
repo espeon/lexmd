@@ -1,5 +1,6 @@
-import * as BskyLex from "./types.ts";
-import config from "./config.ts";
+#! /usr/bin/env node
+import * as BskyLex from "./types.js";
+import config from "./config.js";
 
 import * as fs from "node:fs/promises";
 import * as path from "node:path";

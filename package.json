@@ -2,16 +2,19 @@
   "name": "lexmd",
   "version": "1.0.0",
   "description": "Converts Bluesky Lexicon JSON files to Markdown",
-  "main": "main.js",
+  "main": "dist/main.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "node main.js",
-    "dev": "ts-node main.ts",
-    "convert": "ts-node main.ts"
+    "dev": "ts-node main.ts"
+  },
+  "bin": {
+    "lexmd": "dist/main.js"
   },
   "dependencies": {
     "@atproto/syntax": "^0.4.0",
+    "lexmd": "link:../../Library/pnpm/global/5/node_modules/lexmd",
     "zod": "^3.24.3"
   },
   "devDependencies": {
@@ -20,5 +23,10 @@
     "typescript": "^5.5.4"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "pnpm": {
+    "overrides": {
+      "lexmd": "link:../../Library/pnpm/global/5/node_modules/lexmd"
+    }
+  }
 }
