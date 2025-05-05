@@ -1,14 +1,10 @@
 # Lex M.D.
 
-[![Built with Deno](https://img.shields.io/badge/Built%20with-Deno-4695e1?logo=deno)](https://deno.land/)
-
 Transform ATProto Lexicon files into well-formatted, linkable Markdown documents, perfect for automatic documentation generation.
 
 Validates your lexicons against the official Lexicon specification.
 
 ## Configuration
-
-The `lexToMd/config.ts` file allows you to customize the script's behavior:
 
 ```typescript
 const config: Config = {
@@ -52,14 +48,14 @@ export default config;
 Run the script from your terminal using Deno, providing the input and output directories as arguments. You need to grant read permissions for the input directory/types file and write permissions for the output directory.
 
 ```bash
-deno run --allow-read --allow-write lexToMd/main.ts <path/to/input-lexicons> <path/to/output-markdown>
+lexmd <path/to/input-lexicons> <path/to/output-markdown>
 ```
 
 **Example:**
 
 ```bash
 # Process JSON files in ./lexicons/ and write Markdown to ./docs/reference/
-deno run --allow-read --allow-write lexToMd/main.ts ./lexicons ./docs/reference
+lexmd ./lexicons ./docs/reference
 ```
 
 *   **`<path/to/input-lexicons>`:** The directory containing your `.json` Lexicon files. The script will search recursively.

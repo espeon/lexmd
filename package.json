@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "start": "node main.js",
-    "dev": "ts-node main.ts"
+    "start": "node dist/main.js",
+    "dev": "ts-node src/main.ts"
   },
   "bin": {
     "lexmd": "dist/main.js"
