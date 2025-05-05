@@ -1,6 +1,6 @@
 {
   "name": "lex-md",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Converts Bluesky Lexicon JSON files to Markdown",
   "main": "dist/main.js",
   "files": [

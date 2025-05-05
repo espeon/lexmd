@@ -321,7 +321,7 @@ function main() {
             //  filter and map, then construct full file path
             const jsonFiles = dirents
                 .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".json"))
-                .map((dirent) => path.join(inputDir, dirent.name));
+                .map((dirent) => path.join(dirent.parentPath, dirent.name));
             if (jsonFiles.length === 0) {
                 console.warn(`No .json files found in ${inputDir} or its subdirectories`);
                 return;
