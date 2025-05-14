@@ -4,6 +4,8 @@ Transform ATProto Lexicon files into well-formatted, linkable Markdown documents
 
 Validates your lexicons against the official Lexicon specification.
 
+Only guaranteed to work against Node 20.9 and later.
+
 ## Configuration
 
 ```typescript

@@ -384,6 +384,7 @@ async function main() {
     //  filter and map, then construct full file path
     const jsonFiles = dirents
       .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".json"))
+      // will need node ver 20.12.0 and later due to parentPath!
       .map((dirent) => path.join(dirent.parentPath, dirent.name));
 
     if (jsonFiles.length === 0) {
