@@ -24,10 +24,6 @@ export interface Config {
      * The separator used to join the lexicon NSID segments in the generated Markdown filename.
      */
     defaultLexiconSeparator: string;
-    /**
-     * If true, separates the OpenAPI definitions from the Lexicon definitions.
-     */
-    separateOpenApi: boolean;
 }
 declare const config: Config;
 export default config;
