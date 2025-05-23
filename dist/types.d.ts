@@ -6,13 +6,13 @@ export declare const lexBoolean: z.ZodObject<{
     const: z.ZodOptional<z.ZodBoolean>;
 }, "strict", z.ZodTypeAny, {
     type: "boolean";
-    description?: string | undefined;
     default?: boolean | undefined;
+    description?: string | undefined;
     const?: boolean | undefined;
 }, {
     type: "boolean";
-    description?: string | undefined;
     default?: boolean | undefined;
+    description?: string | undefined;
     const?: boolean | undefined;
 }>;
 export type LexBoolean = z.infer<typeof lexBoolean>;
@@ -26,20 +26,20 @@ export declare const lexInteger: z.ZodObject<{
     const: z.ZodOptional<z.ZodNumber>;
 }, "strict", z.ZodTypeAny, {
     type: "integer";
+    default?: number | undefined;
     minimum?: number | undefined;
     maximum?: number | undefined;
     description?: string | undefined;
-    default?: number | undefined;
-    const?: number | undefined;
     enum?: number[] | undefined;
+    const?: number | undefined;
 }, {
     type: "integer";
+    default?: number | undefined;
     minimum?: number | undefined;
     maximum?: number | undefined;
     description?: string | undefined;
-    default?: number | undefined;
-    const?: number | undefined;
     enum?: number[] | undefined;
+    const?: number | undefined;
 }>;
 export type LexInteger = z.infer<typeof lexInteger>;
 export declare const lexStringFormat: z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>;
@@ -58,25 +58,25 @@ export declare const lexString: z.ZodObject<{
     knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
 }, "strict", z.ZodTypeAny, {
     type: "string";
-    description?: string | undefined;
     default?: string | undefined;
-    const?: string | undefined;
-    enum?: string[] | undefined;
-    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+    description?: string | undefined;
     minLength?: number | undefined;
     maxLength?: number | undefined;
+    enum?: string[] | undefined;
+    const?: string | undefined;
+    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
     minGraphemes?: number | undefined;
     maxGraphemes?: number | undefined;
     knownValues?: string[] | undefined;
 }, {
     type: "string";
-    description?: string | undefined;
     default?: string | undefined;
-    const?: string | undefined;
-    enum?: string[] | undefined;
-    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+    description?: string | undefined;
     minLength?: number | undefined;
     maxLength?: number | undefined;
+    enum?: string[] | undefined;
+    const?: string | undefined;
+    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
     minGraphemes?: number | undefined;
     maxGraphemes?: number | undefined;
     knownValues?: string[] | undefined;
@@ -100,13 +100,13 @@ export declare const lexPrimitive: z.ZodDiscriminatedUnion<"type", [z.ZodObject<
     const: z.ZodOptional<z.ZodBoolean>;
 }, "strict", z.ZodTypeAny, {
     type: "boolean";
-    description?: string | undefined;
     default?: boolean | undefined;
+    description?: string | undefined;
     const?: boolean | undefined;
 }, {
     type: "boolean";
-    description?: string | undefined;
     default?: boolean | undefined;
+    description?: string | undefined;
     const?: boolean | undefined;
 }>, z.ZodObject<{
     type: z.ZodLiteral<"integer">;
@@ -118,20 +118,20 @@ export declare const lexPrimitive: z.ZodDiscriminatedUnion<"type", [z.ZodObject<
     const: z.ZodOptional<z.ZodNumber>;
 }, "strict", z.ZodTypeAny, {
     type: "integer";
+    default?: number | undefined;
     minimum?: number | undefined;
     maximum?: number | undefined;
     description?: string | undefined;
-    default?: number | undefined;
-    const?: number | undefined;
     enum?: number[] | undefined;
+    const?: number | undefined;
 }, {
     type: "integer";
+    default?: number | undefined;
     minimum?: number | undefined;
     maximum?: number | undefined;
     description?: string | undefined;
-    default?: number | undefined;
-    const?: number | undefined;
     enum?: number[] | undefined;
+    const?: number | undefined;
 }>, z.ZodObject<{
     type: z.ZodLiteral<"string">;
     format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -146,25 +146,25 @@ export declare const lexPrimitive: z.ZodDiscriminatedUnion<"type", [z.ZodObject<
     knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
 }, "strict", z.ZodTypeAny, {
     type: "string";
-    description?: string | undefined;
     default?: string | undefined;
-    const?: string | undefined;
-    enum?: string[] | undefined;
-    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+    description?: string | undefined;
     minLength?: number | undefined;
     maxLength?: number | undefined;
+    enum?: string[] | undefined;
+    const?: string | undefined;
+    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
     minGraphemes?: number | undefined;
     maxGraphemes?: number | undefined;
     knownValues?: string[] | undefined;
 }, {
     type: "string";
-    description?: string | undefined;
     default?: string | undefined;
-    const?: string | undefined;
-    enum?: string[] | undefined;
-    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+    description?: string | undefined;
     minLength?: number | undefined;
     maxLength?: number | undefined;
+    enum?: string[] | undefined;
+    const?: string | undefined;
+    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
     minGraphemes?: number | undefined;
     maxGraphemes?: number | undefined;
     knownValues?: string[] | undefined;
@@ -301,13 +301,13 @@ export declare const lexBlob: z.ZodObject<{
 }, "strict", z.ZodTypeAny, {
     type: "blob";
     description?: string | undefined;
-    accept?: string[] | undefined;
     maxSize?: number | undefined;
+    accept?: string[] | undefined;
 }, {
     type: "blob";
     description?: string | undefined;
-    accept?: string[] | undefined;
     maxSize?: number | undefined;
+    accept?: string[] | undefined;
 }>;
 export type LexBlob = z.infer<typeof lexBlob>;
 export declare const lexArray: z.ZodObject<{
@@ -320,13 +320,13 @@ export declare const lexArray: z.ZodObject<{
         const: z.ZodOptional<z.ZodBoolean>;
     }, "strict", z.ZodTypeAny, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     }, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     }>, z.ZodObject<{
         type: z.ZodLiteral<"integer">;
@@ -338,20 +338,20 @@ export declare const lexArray: z.ZodObject<{
         const: z.ZodOptional<z.ZodNumber>;
     }, "strict", z.ZodTypeAny, {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     }, {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     }>, z.ZodObject<{
         type: z.ZodLiteral<"string">;
         format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -366,25 +366,25 @@ export declare const lexArray: z.ZodObject<{
         knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
     }, "strict", z.ZodTypeAny, {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
     }, {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -456,13 +456,13 @@ export declare const lexArray: z.ZodObject<{
     }, "strict", z.ZodTypeAny, {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     }, {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     }>]>;
     minLength: z.ZodOptional<z.ZodNumber>;
     maxLength: z.ZodOptional<z.ZodNumber>;
@@ -470,26 +470,26 @@ export declare const lexArray: z.ZodObject<{
     type: "array";
     items: {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -516,8 +516,8 @@ export declare const lexArray: z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     };
     description?: string | undefined;
     minLength?: number | undefined;
@@ -526,26 +526,26 @@ export declare const lexArray: z.ZodObject<{
     type: "array";
     items: {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -572,8 +572,8 @@ export declare const lexArray: z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     };
     description?: string | undefined;
     minLength?: number | undefined;
@@ -593,13 +593,13 @@ export declare const lexPrimitiveArray: z.ZodObject<{
         const: z.ZodOptional<z.ZodBoolean>;
     }, "strict", z.ZodTypeAny, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     }, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     }>, z.ZodObject<{
         type: z.ZodLiteral<"integer">;
@@ -611,20 +611,20 @@ export declare const lexPrimitiveArray: z.ZodObject<{
         const: z.ZodOptional<z.ZodNumber>;
     }, "strict", z.ZodTypeAny, {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     }, {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     }>, z.ZodObject<{
         type: z.ZodLiteral<"string">;
         format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -639,25 +639,25 @@ export declare const lexPrimitiveArray: z.ZodObject<{
         knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
     }, "strict", z.ZodTypeAny, {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
     }, {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -675,26 +675,26 @@ export declare const lexPrimitiveArray: z.ZodObject<{
     type: "array";
     items: {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -709,26 +709,26 @@ export declare const lexPrimitiveArray: z.ZodObject<{
     type: "array";
     items: {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -767,13 +767,13 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
             const: z.ZodOptional<z.ZodBoolean>;
         }, "strict", z.ZodTypeAny, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"integer">;
@@ -785,20 +785,20 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
             const: z.ZodOptional<z.ZodNumber>;
         }, "strict", z.ZodTypeAny, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"string">;
             format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -813,25 +813,25 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
             knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
         }, "strict", z.ZodTypeAny, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
         }, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -903,13 +903,13 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         }, "strict", z.ZodTypeAny, {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         }, {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         }>]>;
         minLength: z.ZodOptional<z.ZodNumber>;
         maxLength: z.ZodOptional<z.ZodNumber>;
@@ -917,26 +917,26 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -963,8 +963,8 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
@@ -973,26 +973,26 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -1019,8 +1019,8 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
@@ -1032,13 +1032,13 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         const: z.ZodOptional<z.ZodBoolean>;
     }, "strict", z.ZodTypeAny, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     }, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     }>, z.ZodObject<{
         type: z.ZodLiteral<"integer">;
@@ -1050,20 +1050,20 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         const: z.ZodOptional<z.ZodNumber>;
     }, "strict", z.ZodTypeAny, {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     }, {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     }>, z.ZodObject<{
         type: z.ZodLiteral<"string">;
         format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -1078,25 +1078,25 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
     }, "strict", z.ZodTypeAny, {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
     }, {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -1168,38 +1168,38 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
     }, "strict", z.ZodTypeAny, {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     }, {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     }>]>>;
 }, "strict", z.ZodTypeAny, {
     type: "object";
     properties: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -1226,32 +1226,32 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -1278,40 +1278,40 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
     }>;
-    description?: string | undefined;
     required?: string[] | undefined;
+    description?: string | undefined;
     nullable?: string[] | undefined;
 }, {
     type: "object";
     properties: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -1338,32 +1338,32 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -1390,40 +1390,40 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
     }>;
-    description?: string | undefined;
     required?: string[] | undefined;
+    description?: string | undefined;
     nullable?: string[] | undefined;
 }>, {
     type: "object";
     properties: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -1450,32 +1450,32 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -1502,40 +1502,40 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
     }>;
-    description?: string | undefined;
     required?: string[] | undefined;
+    description?: string | undefined;
     nullable?: string[] | undefined;
 }, {
     type: "object";
     properties: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -1562,32 +1562,32 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -1614,15 +1614,15 @@ export declare const lexObject: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
     }>;
-    description?: string | undefined;
     required?: string[] | undefined;
+    description?: string | undefined;
     nullable?: string[] | undefined;
 }>;
 export type LexObject = z.infer<typeof lexObject>;
@@ -1643,13 +1643,13 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
             const: z.ZodOptional<z.ZodBoolean>;
         }, "strict", z.ZodTypeAny, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"integer">;
@@ -1661,20 +1661,20 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
             const: z.ZodOptional<z.ZodNumber>;
         }, "strict", z.ZodTypeAny, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"string">;
             format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -1689,25 +1689,25 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
             knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
         }, "strict", z.ZodTypeAny, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
         }, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -1725,26 +1725,26 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -1759,26 +1759,26 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -1796,13 +1796,13 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         const: z.ZodOptional<z.ZodBoolean>;
     }, "strict", z.ZodTypeAny, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     }, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     }>, z.ZodObject<{
         type: z.ZodLiteral<"integer">;
@@ -1814,20 +1814,20 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         const: z.ZodOptional<z.ZodNumber>;
     }, "strict", z.ZodTypeAny, {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     }, {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     }>, z.ZodObject<{
         type: z.ZodLiteral<"string">;
         format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -1842,25 +1842,25 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
     }, "strict", z.ZodTypeAny, {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
     }, {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -1878,26 +1878,26 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
     type: "params";
     properties: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -1908,26 +1908,26 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -1939,32 +1939,32 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         minLength?: number | undefined;
         maxLength?: number | undefined;
     }>;
-    description?: string | undefined;
     required?: string[] | undefined;
+    description?: string | undefined;
 }, {
     type: "params";
     properties: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -1975,26 +1975,26 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -2006,32 +2006,32 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         minLength?: number | undefined;
         maxLength?: number | undefined;
     }>;
-    description?: string | undefined;
     required?: string[] | undefined;
+    description?: string | undefined;
 }>, {
     type: "params";
     properties: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -2042,26 +2042,26 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -2073,32 +2073,32 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         minLength?: number | undefined;
         maxLength?: number | undefined;
     }>;
-    description?: string | undefined;
     required?: string[] | undefined;
+    description?: string | undefined;
 }, {
     type: "params";
     properties: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -2109,26 +2109,26 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -2140,8 +2140,8 @@ export declare const lexXrpcParameters: z.ZodEffects<z.ZodObject<{
         minLength?: number | undefined;
         maxLength?: number | undefined;
     }>;
-    description?: string | undefined;
     required?: string[] | undefined;
+    description?: string | undefined;
 }>;
 export type LexXrpcParameters = z.infer<typeof lexXrpcParameters>;
 export declare const lexXrpcBody: z.ZodObject<{
@@ -2189,13 +2189,13 @@ export declare const lexXrpcBody: z.ZodObject<{
                 const: z.ZodOptional<z.ZodBoolean>;
             }, "strict", z.ZodTypeAny, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"integer">;
@@ -2207,20 +2207,20 @@ export declare const lexXrpcBody: z.ZodObject<{
                 const: z.ZodOptional<z.ZodNumber>;
             }, "strict", z.ZodTypeAny, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"string">;
                 format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -2235,25 +2235,25 @@ export declare const lexXrpcBody: z.ZodObject<{
                 knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
             }, "strict", z.ZodTypeAny, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
             }, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -2325,13 +2325,13 @@ export declare const lexXrpcBody: z.ZodObject<{
             }, "strict", z.ZodTypeAny, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }>]>;
             minLength: z.ZodOptional<z.ZodNumber>;
             maxLength: z.ZodOptional<z.ZodNumber>;
@@ -2339,26 +2339,26 @@ export declare const lexXrpcBody: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -2385,8 +2385,8 @@ export declare const lexXrpcBody: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
@@ -2395,26 +2395,26 @@ export declare const lexXrpcBody: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -2441,8 +2441,8 @@ export declare const lexXrpcBody: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
@@ -2454,13 +2454,13 @@ export declare const lexXrpcBody: z.ZodObject<{
             const: z.ZodOptional<z.ZodBoolean>;
         }, "strict", z.ZodTypeAny, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"integer">;
@@ -2472,20 +2472,20 @@ export declare const lexXrpcBody: z.ZodObject<{
             const: z.ZodOptional<z.ZodNumber>;
         }, "strict", z.ZodTypeAny, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"string">;
             format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -2500,25 +2500,25 @@ export declare const lexXrpcBody: z.ZodObject<{
             knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
         }, "strict", z.ZodTypeAny, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
         }, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -2590,38 +2590,38 @@ export declare const lexXrpcBody: z.ZodObject<{
         }, "strict", z.ZodTypeAny, {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         }, {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         }>]>>;
     }, "strict", z.ZodTypeAny, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -2648,32 +2648,32 @@ export declare const lexXrpcBody: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -2700,40 +2700,40 @@ export declare const lexXrpcBody: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -2760,32 +2760,32 @@ export declare const lexXrpcBody: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -2812,40 +2812,40 @@ export declare const lexXrpcBody: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }>, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -2872,32 +2872,32 @@ export declare const lexXrpcBody: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -2924,40 +2924,40 @@ export declare const lexXrpcBody: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -2984,32 +2984,32 @@ export declare const lexXrpcBody: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -3036,15 +3036,15 @@ export declare const lexXrpcBody: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }>]>>;
 }, "strict", z.ZodTypeAny, {
@@ -3063,26 +3063,26 @@ export declare const lexXrpcBody: z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -3109,32 +3109,32 @@ export declare const lexXrpcBody: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -3161,15 +3161,15 @@ export declare const lexXrpcBody: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     } | undefined;
 }, {
@@ -3188,26 +3188,26 @@ export declare const lexXrpcBody: z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -3234,32 +3234,32 @@ export declare const lexXrpcBody: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -3286,15 +3286,15 @@ export declare const lexXrpcBody: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     } | undefined;
 }>;
@@ -3343,13 +3343,13 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
                 const: z.ZodOptional<z.ZodBoolean>;
             }, "strict", z.ZodTypeAny, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"integer">;
@@ -3361,20 +3361,20 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
                 const: z.ZodOptional<z.ZodNumber>;
             }, "strict", z.ZodTypeAny, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"string">;
                 format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -3389,25 +3389,25 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
                 knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
             }, "strict", z.ZodTypeAny, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
             }, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -3479,13 +3479,13 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             }, "strict", z.ZodTypeAny, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }>]>;
             minLength: z.ZodOptional<z.ZodNumber>;
             maxLength: z.ZodOptional<z.ZodNumber>;
@@ -3493,26 +3493,26 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -3539,8 +3539,8 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
@@ -3549,26 +3549,26 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -3595,8 +3595,8 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
@@ -3608,13 +3608,13 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             const: z.ZodOptional<z.ZodBoolean>;
         }, "strict", z.ZodTypeAny, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"integer">;
@@ -3626,20 +3626,20 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             const: z.ZodOptional<z.ZodNumber>;
         }, "strict", z.ZodTypeAny, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"string">;
             format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -3654,25 +3654,25 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
         }, "strict", z.ZodTypeAny, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
         }, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -3744,38 +3744,38 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
         }, "strict", z.ZodTypeAny, {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         }, {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         }>]>>;
     }, "strict", z.ZodTypeAny, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -3802,32 +3802,32 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -3854,40 +3854,40 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -3914,32 +3914,32 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -3966,40 +3966,40 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }>, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -4026,32 +4026,32 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -4078,40 +4078,40 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -4138,32 +4138,32 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -4190,15 +4190,15 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }>]>>;
 }, "strict", z.ZodTypeAny, {
@@ -4216,26 +4216,26 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -4262,32 +4262,32 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -4314,15 +4314,15 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     } | undefined;
 }, {
@@ -4340,26 +4340,26 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -4386,32 +4386,32 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -4438,15 +4438,15 @@ export declare const lexXrpcSubscriptionMessage: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     } | undefined;
 }>;
@@ -4482,13 +4482,13 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 const: z.ZodOptional<z.ZodBoolean>;
             }, "strict", z.ZodTypeAny, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"integer">;
@@ -4500,20 +4500,20 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 const: z.ZodOptional<z.ZodNumber>;
             }, "strict", z.ZodTypeAny, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"string">;
                 format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -4528,25 +4528,25 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
             }, "strict", z.ZodTypeAny, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
             }, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -4564,26 +4564,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -4598,26 +4598,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -4635,13 +4635,13 @@ export declare const lexXrpcQuery: z.ZodObject<{
             const: z.ZodOptional<z.ZodBoolean>;
         }, "strict", z.ZodTypeAny, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"integer">;
@@ -4653,20 +4653,20 @@ export declare const lexXrpcQuery: z.ZodObject<{
             const: z.ZodOptional<z.ZodNumber>;
         }, "strict", z.ZodTypeAny, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"string">;
             format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -4681,25 +4681,25 @@ export declare const lexXrpcQuery: z.ZodObject<{
             knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
         }, "strict", z.ZodTypeAny, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
         }, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -4717,26 +4717,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -4747,26 +4747,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -4778,32 +4778,32 @@ export declare const lexXrpcQuery: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }, {
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -4814,26 +4814,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -4845,32 +4845,32 @@ export declare const lexXrpcQuery: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }>, {
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -4881,26 +4881,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -4912,32 +4912,32 @@ export declare const lexXrpcQuery: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }, {
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -4948,26 +4948,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -4979,8 +4979,8 @@ export declare const lexXrpcQuery: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }>>;
     output: z.ZodOptional<z.ZodObject<{
         description: z.ZodOptional<z.ZodString>;
@@ -5027,13 +5027,13 @@ export declare const lexXrpcQuery: z.ZodObject<{
                     const: z.ZodOptional<z.ZodBoolean>;
                 }, "strict", z.ZodTypeAny, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 }, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 }>, z.ZodObject<{
                     type: z.ZodLiteral<"integer">;
@@ -5045,20 +5045,20 @@ export declare const lexXrpcQuery: z.ZodObject<{
                     const: z.ZodOptional<z.ZodNumber>;
                 }, "strict", z.ZodTypeAny, {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 }, {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 }>, z.ZodObject<{
                     type: z.ZodLiteral<"string">;
                     format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -5073,25 +5073,25 @@ export declare const lexXrpcQuery: z.ZodObject<{
                     knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
                 }, "strict", z.ZodTypeAny, {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
                 }, {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -5163,13 +5163,13 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 }, "strict", z.ZodTypeAny, {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 }, {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 }>]>;
                 minLength: z.ZodOptional<z.ZodNumber>;
                 maxLength: z.ZodOptional<z.ZodNumber>;
@@ -5177,26 +5177,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -5223,8 +5223,8 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
@@ -5233,26 +5233,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -5279,8 +5279,8 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
@@ -5292,13 +5292,13 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 const: z.ZodOptional<z.ZodBoolean>;
             }, "strict", z.ZodTypeAny, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"integer">;
@@ -5310,20 +5310,20 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 const: z.ZodOptional<z.ZodNumber>;
             }, "strict", z.ZodTypeAny, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"string">;
                 format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -5338,25 +5338,25 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
             }, "strict", z.ZodTypeAny, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
             }, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -5428,38 +5428,38 @@ export declare const lexXrpcQuery: z.ZodObject<{
             }, "strict", z.ZodTypeAny, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }>]>>;
         }, "strict", z.ZodTypeAny, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -5486,32 +5486,32 @@ export declare const lexXrpcQuery: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -5538,40 +5538,40 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -5598,32 +5598,32 @@ export declare const lexXrpcQuery: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -5650,40 +5650,40 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }>, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -5710,32 +5710,32 @@ export declare const lexXrpcQuery: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -5762,40 +5762,40 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -5822,32 +5822,32 @@ export declare const lexXrpcQuery: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -5874,15 +5874,15 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }>]>>;
     }, "strict", z.ZodTypeAny, {
@@ -5901,26 +5901,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -5947,32 +5947,32 @@ export declare const lexXrpcQuery: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -5999,15 +5999,15 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     }, {
@@ -6026,26 +6026,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -6072,32 +6072,32 @@ export declare const lexXrpcQuery: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -6124,15 +6124,15 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     }>>;
@@ -6149,74 +6149,6 @@ export declare const lexXrpcQuery: z.ZodObject<{
 }, "strict", z.ZodTypeAny, {
     type: "query";
     description?: string | undefined;
-    parameters?: {
-        type: "params";
-        properties: Record<string, {
-            type: "boolean";
-            description?: string | undefined;
-            default?: boolean | undefined;
-            const?: boolean | undefined;
-        } | {
-            type: "integer";
-            minimum?: number | undefined;
-            maximum?: number | undefined;
-            description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
-            enum?: number[] | undefined;
-        } | {
-            type: "string";
-            description?: string | undefined;
-            default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-            minGraphemes?: number | undefined;
-            maxGraphemes?: number | undefined;
-            knownValues?: string[] | undefined;
-        } | {
-            type: "unknown";
-            description?: string | undefined;
-        } | {
-            type: "array";
-            items: {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            };
-            description?: string | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-        }>;
-        description?: string | undefined;
-        required?: string[] | undefined;
-    } | undefined;
     output?: {
         encoding: string;
         description?: string | undefined;
@@ -6233,26 +6165,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -6279,32 +6211,32 @@ export declare const lexXrpcQuery: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -6331,17 +6263,85 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
+    } | undefined;
+    parameters?: {
+        type: "params";
+        properties: Record<string, {
+            type: "boolean";
+            default?: boolean | undefined;
+            description?: string | undefined;
+            const?: boolean | undefined;
+        } | {
+            type: "integer";
+            default?: number | undefined;
+            minimum?: number | undefined;
+            maximum?: number | undefined;
+            description?: string | undefined;
+            enum?: number[] | undefined;
+            const?: number | undefined;
+        } | {
+            type: "string";
+            default?: string | undefined;
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+            minGraphemes?: number | undefined;
+            maxGraphemes?: number | undefined;
+            knownValues?: string[] | undefined;
+        } | {
+            type: "unknown";
+            description?: string | undefined;
+        } | {
+            type: "array";
+            items: {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            };
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+        }>;
+        required?: string[] | undefined;
+        description?: string | undefined;
     } | undefined;
     errors?: {
         name: string;
@@ -6350,74 +6350,6 @@ export declare const lexXrpcQuery: z.ZodObject<{
 }, {
     type: "query";
     description?: string | undefined;
-    parameters?: {
-        type: "params";
-        properties: Record<string, {
-            type: "boolean";
-            description?: string | undefined;
-            default?: boolean | undefined;
-            const?: boolean | undefined;
-        } | {
-            type: "integer";
-            minimum?: number | undefined;
-            maximum?: number | undefined;
-            description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
-            enum?: number[] | undefined;
-        } | {
-            type: "string";
-            description?: string | undefined;
-            default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-            minGraphemes?: number | undefined;
-            maxGraphemes?: number | undefined;
-            knownValues?: string[] | undefined;
-        } | {
-            type: "unknown";
-            description?: string | undefined;
-        } | {
-            type: "array";
-            items: {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            };
-            description?: string | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-        }>;
-        description?: string | undefined;
-        required?: string[] | undefined;
-    } | undefined;
     output?: {
         encoding: string;
         description?: string | undefined;
@@ -6434,26 +6366,26 @@ export declare const lexXrpcQuery: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -6480,32 +6412,32 @@ export declare const lexXrpcQuery: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -6532,17 +6464,85 @@ export declare const lexXrpcQuery: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
+    } | undefined;
+    parameters?: {
+        type: "params";
+        properties: Record<string, {
+            type: "boolean";
+            default?: boolean | undefined;
+            description?: string | undefined;
+            const?: boolean | undefined;
+        } | {
+            type: "integer";
+            default?: number | undefined;
+            minimum?: number | undefined;
+            maximum?: number | undefined;
+            description?: string | undefined;
+            enum?: number[] | undefined;
+            const?: number | undefined;
+        } | {
+            type: "string";
+            default?: string | undefined;
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+            minGraphemes?: number | undefined;
+            maxGraphemes?: number | undefined;
+            knownValues?: string[] | undefined;
+        } | {
+            type: "unknown";
+            description?: string | undefined;
+        } | {
+            type: "array";
+            items: {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            };
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+        }>;
+        required?: string[] | undefined;
+        description?: string | undefined;
     } | undefined;
     errors?: {
         name: string;
@@ -6570,13 +6570,13 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 const: z.ZodOptional<z.ZodBoolean>;
             }, "strict", z.ZodTypeAny, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"integer">;
@@ -6588,20 +6588,20 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 const: z.ZodOptional<z.ZodNumber>;
             }, "strict", z.ZodTypeAny, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"string">;
                 format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -6616,25 +6616,25 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
             }, "strict", z.ZodTypeAny, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
             }, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -6652,26 +6652,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -6686,26 +6686,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -6723,13 +6723,13 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             const: z.ZodOptional<z.ZodBoolean>;
         }, "strict", z.ZodTypeAny, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"integer">;
@@ -6741,20 +6741,20 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             const: z.ZodOptional<z.ZodNumber>;
         }, "strict", z.ZodTypeAny, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"string">;
             format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -6769,25 +6769,25 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
         }, "strict", z.ZodTypeAny, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
         }, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -6805,26 +6805,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -6835,26 +6835,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -6866,32 +6866,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }, {
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -6902,26 +6902,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -6933,32 +6933,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }>, {
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -6969,26 +6969,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -7000,32 +7000,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }, {
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -7036,26 +7036,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -7067,8 +7067,8 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }>>;
     input: z.ZodOptional<z.ZodObject<{
         description: z.ZodOptional<z.ZodString>;
@@ -7115,13 +7115,13 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                     const: z.ZodOptional<z.ZodBoolean>;
                 }, "strict", z.ZodTypeAny, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 }, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 }>, z.ZodObject<{
                     type: z.ZodLiteral<"integer">;
@@ -7133,20 +7133,20 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                     const: z.ZodOptional<z.ZodNumber>;
                 }, "strict", z.ZodTypeAny, {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 }, {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 }>, z.ZodObject<{
                     type: z.ZodLiteral<"string">;
                     format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -7161,25 +7161,25 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                     knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
                 }, "strict", z.ZodTypeAny, {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
                 }, {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -7251,13 +7251,13 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 }, "strict", z.ZodTypeAny, {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 }, {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 }>]>;
                 minLength: z.ZodOptional<z.ZodNumber>;
                 maxLength: z.ZodOptional<z.ZodNumber>;
@@ -7265,26 +7265,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -7311,8 +7311,8 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
@@ -7321,26 +7321,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -7367,8 +7367,8 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
@@ -7380,13 +7380,13 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 const: z.ZodOptional<z.ZodBoolean>;
             }, "strict", z.ZodTypeAny, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"integer">;
@@ -7398,20 +7398,20 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 const: z.ZodOptional<z.ZodNumber>;
             }, "strict", z.ZodTypeAny, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"string">;
                 format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -7426,25 +7426,25 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
             }, "strict", z.ZodTypeAny, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
             }, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -7516,38 +7516,38 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             }, "strict", z.ZodTypeAny, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }>]>>;
         }, "strict", z.ZodTypeAny, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -7574,32 +7574,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -7626,40 +7626,40 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -7686,32 +7686,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -7738,40 +7738,40 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }>, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -7798,32 +7798,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -7850,40 +7850,40 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -7910,32 +7910,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -7962,15 +7962,15 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }>]>>;
     }, "strict", z.ZodTypeAny, {
@@ -7989,26 +7989,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -8035,32 +8035,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -8087,15 +8087,15 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     }, {
@@ -8114,26 +8114,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -8160,32 +8160,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -8212,15 +8212,15 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     }>>;
@@ -8269,13 +8269,13 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                     const: z.ZodOptional<z.ZodBoolean>;
                 }, "strict", z.ZodTypeAny, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 }, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 }>, z.ZodObject<{
                     type: z.ZodLiteral<"integer">;
@@ -8287,20 +8287,20 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                     const: z.ZodOptional<z.ZodNumber>;
                 }, "strict", z.ZodTypeAny, {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 }, {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 }>, z.ZodObject<{
                     type: z.ZodLiteral<"string">;
                     format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -8315,25 +8315,25 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                     knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
                 }, "strict", z.ZodTypeAny, {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
                 }, {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -8405,13 +8405,13 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 }, "strict", z.ZodTypeAny, {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 }, {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 }>]>;
                 minLength: z.ZodOptional<z.ZodNumber>;
                 maxLength: z.ZodOptional<z.ZodNumber>;
@@ -8419,26 +8419,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -8465,8 +8465,8 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
@@ -8475,26 +8475,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -8521,8 +8521,8 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
@@ -8534,13 +8534,13 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 const: z.ZodOptional<z.ZodBoolean>;
             }, "strict", z.ZodTypeAny, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"integer">;
@@ -8552,20 +8552,20 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 const: z.ZodOptional<z.ZodNumber>;
             }, "strict", z.ZodTypeAny, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"string">;
                 format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -8580,25 +8580,25 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
             }, "strict", z.ZodTypeAny, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
             }, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -8670,38 +8670,38 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             }, "strict", z.ZodTypeAny, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }>]>>;
         }, "strict", z.ZodTypeAny, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -8728,32 +8728,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -8780,40 +8780,40 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -8840,32 +8840,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -8892,40 +8892,40 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }>, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -8952,32 +8952,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -9004,40 +9004,40 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -9064,32 +9064,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -9116,15 +9116,15 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }>]>>;
     }, "strict", z.ZodTypeAny, {
@@ -9143,26 +9143,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -9189,32 +9189,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -9241,15 +9241,15 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     }, {
@@ -9268,26 +9268,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -9314,32 +9314,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -9366,15 +9366,15 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     }>>;
@@ -9390,205 +9390,6 @@ export declare const lexXrpcProcedure: z.ZodObject<{
     }>, "many">>;
 }, "strict", z.ZodTypeAny, {
     type: "procedure";
-    description?: string | undefined;
-    parameters?: {
-        type: "params";
-        properties: Record<string, {
-            type: "boolean";
-            description?: string | undefined;
-            default?: boolean | undefined;
-            const?: boolean | undefined;
-        } | {
-            type: "integer";
-            minimum?: number | undefined;
-            maximum?: number | undefined;
-            description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
-            enum?: number[] | undefined;
-        } | {
-            type: "string";
-            description?: string | undefined;
-            default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-            minGraphemes?: number | undefined;
-            maxGraphemes?: number | undefined;
-            knownValues?: string[] | undefined;
-        } | {
-            type: "unknown";
-            description?: string | undefined;
-        } | {
-            type: "array";
-            items: {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            };
-            description?: string | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-        }>;
-        description?: string | undefined;
-        required?: string[] | undefined;
-    } | undefined;
-    output?: {
-        encoding: string;
-        description?: string | undefined;
-        schema?: {
-            type: "ref";
-            ref: string;
-            description?: string | undefined;
-        } | {
-            type: "union";
-            refs: string[];
-            description?: string | undefined;
-            closed?: boolean | undefined;
-        } | {
-            type: "object";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "bytes";
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            } | {
-                type: "cid-link";
-                description?: string | undefined;
-            } | {
-                type: "ref";
-                ref: string;
-                description?: string | undefined;
-            } | {
-                type: "union";
-                refs: string[];
-                description?: string | undefined;
-                closed?: boolean | undefined;
-            } | {
-                type: "blob";
-                description?: string | undefined;
-                accept?: string[] | undefined;
-                maxSize?: number | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                } | {
-                    type: "bytes";
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                } | {
-                    type: "cid-link";
-                    description?: string | undefined;
-                } | {
-                    type: "ref";
-                    ref: string;
-                    description?: string | undefined;
-                } | {
-                    type: "union";
-                    refs: string[];
-                    description?: string | undefined;
-                    closed?: boolean | undefined;
-                } | {
-                    type: "blob";
-                    description?: string | undefined;
-                    accept?: string[] | undefined;
-                    maxSize?: number | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-            nullable?: string[] | undefined;
-        } | undefined;
-    } | undefined;
-    errors?: {
-        name: string;
-        description?: string | undefined;
-    }[] | undefined;
     input?: {
         encoding: string;
         description?: string | undefined;
@@ -9605,26 +9406,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -9651,32 +9452,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -9703,219 +9504,219 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     } | undefined;
+    description?: string | undefined;
+    output?: {
+        encoding: string;
+        description?: string | undefined;
+        schema?: {
+            type: "ref";
+            ref: string;
+            description?: string | undefined;
+        } | {
+            type: "union";
+            refs: string[];
+            description?: string | undefined;
+            closed?: boolean | undefined;
+        } | {
+            type: "object";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "bytes";
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            } | {
+                type: "cid-link";
+                description?: string | undefined;
+            } | {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "blob";
+                description?: string | undefined;
+                maxSize?: number | undefined;
+                accept?: string[] | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+            nullable?: string[] | undefined;
+        } | undefined;
+    } | undefined;
+    parameters?: {
+        type: "params";
+        properties: Record<string, {
+            type: "boolean";
+            default?: boolean | undefined;
+            description?: string | undefined;
+            const?: boolean | undefined;
+        } | {
+            type: "integer";
+            default?: number | undefined;
+            minimum?: number | undefined;
+            maximum?: number | undefined;
+            description?: string | undefined;
+            enum?: number[] | undefined;
+            const?: number | undefined;
+        } | {
+            type: "string";
+            default?: string | undefined;
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+            minGraphemes?: number | undefined;
+            maxGraphemes?: number | undefined;
+            knownValues?: string[] | undefined;
+        } | {
+            type: "unknown";
+            description?: string | undefined;
+        } | {
+            type: "array";
+            items: {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            };
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+        }>;
+        required?: string[] | undefined;
+        description?: string | undefined;
+    } | undefined;
+    errors?: {
+        name: string;
+        description?: string | undefined;
+    }[] | undefined;
 }, {
     type: "procedure";
-    description?: string | undefined;
-    parameters?: {
-        type: "params";
-        properties: Record<string, {
-            type: "boolean";
-            description?: string | undefined;
-            default?: boolean | undefined;
-            const?: boolean | undefined;
-        } | {
-            type: "integer";
-            minimum?: number | undefined;
-            maximum?: number | undefined;
-            description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
-            enum?: number[] | undefined;
-        } | {
-            type: "string";
-            description?: string | undefined;
-            default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-            minGraphemes?: number | undefined;
-            maxGraphemes?: number | undefined;
-            knownValues?: string[] | undefined;
-        } | {
-            type: "unknown";
-            description?: string | undefined;
-        } | {
-            type: "array";
-            items: {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            };
-            description?: string | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-        }>;
-        description?: string | undefined;
-        required?: string[] | undefined;
-    } | undefined;
-    output?: {
-        encoding: string;
-        description?: string | undefined;
-        schema?: {
-            type: "ref";
-            ref: string;
-            description?: string | undefined;
-        } | {
-            type: "union";
-            refs: string[];
-            description?: string | undefined;
-            closed?: boolean | undefined;
-        } | {
-            type: "object";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "bytes";
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            } | {
-                type: "cid-link";
-                description?: string | undefined;
-            } | {
-                type: "ref";
-                ref: string;
-                description?: string | undefined;
-            } | {
-                type: "union";
-                refs: string[];
-                description?: string | undefined;
-                closed?: boolean | undefined;
-            } | {
-                type: "blob";
-                description?: string | undefined;
-                accept?: string[] | undefined;
-                maxSize?: number | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                } | {
-                    type: "bytes";
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                } | {
-                    type: "cid-link";
-                    description?: string | undefined;
-                } | {
-                    type: "ref";
-                    ref: string;
-                    description?: string | undefined;
-                } | {
-                    type: "union";
-                    refs: string[];
-                    description?: string | undefined;
-                    closed?: boolean | undefined;
-                } | {
-                    type: "blob";
-                    description?: string | undefined;
-                    accept?: string[] | undefined;
-                    maxSize?: number | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-            nullable?: string[] | undefined;
-        } | undefined;
-    } | undefined;
-    errors?: {
-        name: string;
-        description?: string | undefined;
-    }[] | undefined;
     input?: {
         encoding: string;
         description?: string | undefined;
@@ -9932,26 +9733,26 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -9978,32 +9779,32 @@ export declare const lexXrpcProcedure: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -10030,18 +9831,217 @@ export declare const lexXrpcProcedure: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     } | undefined;
+    description?: string | undefined;
+    output?: {
+        encoding: string;
+        description?: string | undefined;
+        schema?: {
+            type: "ref";
+            ref: string;
+            description?: string | undefined;
+        } | {
+            type: "union";
+            refs: string[];
+            description?: string | undefined;
+            closed?: boolean | undefined;
+        } | {
+            type: "object";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "bytes";
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            } | {
+                type: "cid-link";
+                description?: string | undefined;
+            } | {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "blob";
+                description?: string | undefined;
+                maxSize?: number | undefined;
+                accept?: string[] | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+            nullable?: string[] | undefined;
+        } | undefined;
+    } | undefined;
+    parameters?: {
+        type: "params";
+        properties: Record<string, {
+            type: "boolean";
+            default?: boolean | undefined;
+            description?: string | undefined;
+            const?: boolean | undefined;
+        } | {
+            type: "integer";
+            default?: number | undefined;
+            minimum?: number | undefined;
+            maximum?: number | undefined;
+            description?: string | undefined;
+            enum?: number[] | undefined;
+            const?: number | undefined;
+        } | {
+            type: "string";
+            default?: string | undefined;
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+            minGraphemes?: number | undefined;
+            maxGraphemes?: number | undefined;
+            knownValues?: string[] | undefined;
+        } | {
+            type: "unknown";
+            description?: string | undefined;
+        } | {
+            type: "array";
+            items: {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            };
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+        }>;
+        required?: string[] | undefined;
+        description?: string | undefined;
+    } | undefined;
+    errors?: {
+        name: string;
+        description?: string | undefined;
+    }[] | undefined;
 }>;
 export type LexXrpcProcedure = z.infer<typeof lexXrpcProcedure>;
 export declare const lexXrpcSubscription: z.ZodObject<{
@@ -10064,13 +10064,13 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 const: z.ZodOptional<z.ZodBoolean>;
             }, "strict", z.ZodTypeAny, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"integer">;
@@ -10082,20 +10082,20 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 const: z.ZodOptional<z.ZodNumber>;
             }, "strict", z.ZodTypeAny, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"string">;
                 format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -10110,25 +10110,25 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
             }, "strict", z.ZodTypeAny, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
             }, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -10146,26 +10146,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -10180,26 +10180,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -10217,13 +10217,13 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             const: z.ZodOptional<z.ZodBoolean>;
         }, "strict", z.ZodTypeAny, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"integer">;
@@ -10235,20 +10235,20 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             const: z.ZodOptional<z.ZodNumber>;
         }, "strict", z.ZodTypeAny, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"string">;
             format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -10263,25 +10263,25 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
         }, "strict", z.ZodTypeAny, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
         }, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -10299,26 +10299,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -10329,26 +10329,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -10360,32 +10360,32 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }, {
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -10396,26 +10396,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -10427,32 +10427,32 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }>, {
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -10463,26 +10463,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -10494,32 +10494,32 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }, {
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -10530,26 +10530,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -10561,8 +10561,8 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     }>>;
     message: z.ZodOptional<z.ZodObject<{
         description: z.ZodOptional<z.ZodString>;
@@ -10608,13 +10608,13 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                     const: z.ZodOptional<z.ZodBoolean>;
                 }, "strict", z.ZodTypeAny, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 }, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 }>, z.ZodObject<{
                     type: z.ZodLiteral<"integer">;
@@ -10626,20 +10626,20 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                     const: z.ZodOptional<z.ZodNumber>;
                 }, "strict", z.ZodTypeAny, {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 }, {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 }>, z.ZodObject<{
                     type: z.ZodLiteral<"string">;
                     format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -10654,25 +10654,25 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                     knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
                 }, "strict", z.ZodTypeAny, {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
                 }, {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -10744,13 +10744,13 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 }, "strict", z.ZodTypeAny, {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 }, {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 }>]>;
                 minLength: z.ZodOptional<z.ZodNumber>;
                 maxLength: z.ZodOptional<z.ZodNumber>;
@@ -10758,26 +10758,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -10804,8 +10804,8 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
@@ -10814,26 +10814,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -10860,8 +10860,8 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
@@ -10873,13 +10873,13 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 const: z.ZodOptional<z.ZodBoolean>;
             }, "strict", z.ZodTypeAny, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"integer">;
@@ -10891,20 +10891,20 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 const: z.ZodOptional<z.ZodNumber>;
             }, "strict", z.ZodTypeAny, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"string">;
                 format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -10919,25 +10919,25 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
             }, "strict", z.ZodTypeAny, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
             }, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -11009,38 +11009,38 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             }, "strict", z.ZodTypeAny, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }>]>>;
         }, "strict", z.ZodTypeAny, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -11067,32 +11067,32 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -11119,40 +11119,40 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -11179,32 +11179,32 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -11231,40 +11231,40 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }>, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -11291,32 +11291,32 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -11343,40 +11343,40 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }, {
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -11403,32 +11403,32 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -11455,15 +11455,15 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         }>]>>;
     }, "strict", z.ZodTypeAny, {
@@ -11481,26 +11481,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -11527,32 +11527,32 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -11579,15 +11579,15 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     }, {
@@ -11605,26 +11605,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -11651,32 +11651,32 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -11703,15 +11703,15 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     }>>;
@@ -11742,26 +11742,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -11788,32 +11788,32 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -11840,15 +11840,15 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     } | undefined;
@@ -11857,26 +11857,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -11887,26 +11887,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -11918,8 +11918,8 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     } | undefined;
     errors?: {
         name: string;
@@ -11942,26 +11942,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -11988,32 +11988,32 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -12040,15 +12040,15 @@ export declare const lexXrpcSubscription: z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     } | undefined;
@@ -12057,26 +12057,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -12087,26 +12087,26 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -12118,8 +12118,8 @@ export declare const lexXrpcSubscription: z.ZodObject<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     } | undefined;
     errors?: {
         name: string;
@@ -12146,13 +12146,13 @@ export declare const lexRecord: z.ZodObject<{
                 const: z.ZodOptional<z.ZodBoolean>;
             }, "strict", z.ZodTypeAny, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"integer">;
@@ -12164,20 +12164,20 @@ export declare const lexRecord: z.ZodObject<{
                 const: z.ZodOptional<z.ZodNumber>;
             }, "strict", z.ZodTypeAny, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }, {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             }>, z.ZodObject<{
                 type: z.ZodLiteral<"string">;
                 format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -12192,25 +12192,25 @@ export declare const lexRecord: z.ZodObject<{
                 knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
             }, "strict", z.ZodTypeAny, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
             }, {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -12282,13 +12282,13 @@ export declare const lexRecord: z.ZodObject<{
             }, "strict", z.ZodTypeAny, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }, {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             }>]>;
             minLength: z.ZodOptional<z.ZodNumber>;
             maxLength: z.ZodOptional<z.ZodNumber>;
@@ -12296,26 +12296,26 @@ export declare const lexRecord: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -12342,8 +12342,8 @@ export declare const lexRecord: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
@@ -12352,26 +12352,26 @@ export declare const lexRecord: z.ZodObject<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -12398,8 +12398,8 @@ export declare const lexRecord: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
@@ -12411,13 +12411,13 @@ export declare const lexRecord: z.ZodObject<{
             const: z.ZodOptional<z.ZodBoolean>;
         }, "strict", z.ZodTypeAny, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"integer">;
@@ -12429,20 +12429,20 @@ export declare const lexRecord: z.ZodObject<{
             const: z.ZodOptional<z.ZodNumber>;
         }, "strict", z.ZodTypeAny, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }, {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         }>, z.ZodObject<{
             type: z.ZodLiteral<"string">;
             format: z.ZodOptional<z.ZodEnum<["datetime", "uri", "at-uri", "did", "handle", "at-identifier", "nsid", "cid", "language", "tid", "record-key"]>>;
@@ -12457,25 +12457,25 @@ export declare const lexRecord: z.ZodObject<{
             knownValues: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
         }, "strict", z.ZodTypeAny, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
         }, {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -12547,38 +12547,38 @@ export declare const lexRecord: z.ZodObject<{
         }, "strict", z.ZodTypeAny, {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         }, {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         }>]>>;
     }, "strict", z.ZodTypeAny, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -12605,32 +12605,32 @@ export declare const lexRecord: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -12657,40 +12657,40 @@ export declare const lexRecord: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -12717,32 +12717,32 @@ export declare const lexRecord: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -12769,40 +12769,40 @@ export declare const lexRecord: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }>, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -12829,32 +12829,32 @@ export declare const lexRecord: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -12881,40 +12881,40 @@ export declare const lexRecord: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }, {
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -12941,32 +12941,32 @@ export declare const lexRecord: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -12993,15 +12993,15 @@ export declare const lexRecord: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     }>;
 }, "strict", z.ZodTypeAny, {
@@ -13010,26 +13010,26 @@ export declare const lexRecord: z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -13056,32 +13056,32 @@ export declare const lexRecord: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -13108,15 +13108,15 @@ export declare const lexRecord: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     };
     description?: string | undefined;
@@ -13127,26 +13127,26 @@ export declare const lexRecord: z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -13173,32 +13173,32 @@ export declare const lexRecord: z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -13225,15 +13225,15 @@ export declare const lexRecord: z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     };
     description?: string | undefined;
@@ -13242,26 +13242,26 @@ export declare const lexRecord: z.ZodObject<{
 export type LexRecord = z.infer<typeof lexRecord>;
 export declare const lexUserType: z.ZodType<{
     type: "boolean";
-    description?: string | undefined;
     default?: boolean | undefined;
+    description?: string | undefined;
     const?: boolean | undefined;
 } | {
     type: "integer";
+    default?: number | undefined;
     minimum?: number | undefined;
     maximum?: number | undefined;
     description?: string | undefined;
-    default?: number | undefined;
-    const?: number | undefined;
     enum?: number[] | undefined;
+    const?: number | undefined;
 } | {
     type: "string";
-    description?: string | undefined;
     default?: string | undefined;
-    const?: string | undefined;
-    enum?: string[] | undefined;
-    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+    description?: string | undefined;
     minLength?: number | undefined;
     maxLength?: number | undefined;
+    enum?: string[] | undefined;
+    const?: string | undefined;
+    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
     minGraphemes?: number | undefined;
     maxGraphemes?: number | undefined;
     knownValues?: string[] | undefined;
@@ -13279,32 +13279,32 @@ export declare const lexUserType: z.ZodType<{
 } | {
     type: "blob";
     description?: string | undefined;
-    accept?: string[] | undefined;
     maxSize?: number | undefined;
+    accept?: string[] | undefined;
 } | {
     type: "array";
     items: {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -13331,8 +13331,8 @@ export declare const lexUserType: z.ZodType<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     };
     description?: string | undefined;
     minLength?: number | undefined;
@@ -13344,26 +13344,26 @@ export declare const lexUserType: z.ZodType<{
     type: "object";
     properties: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -13390,32 +13390,32 @@ export declare const lexUserType: z.ZodType<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -13442,87 +13442,19 @@ export declare const lexUserType: z.ZodType<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
     }>;
-    description?: string | undefined;
     required?: string[] | undefined;
+    description?: string | undefined;
     nullable?: string[] | undefined;
 } | {
     type: "query";
     description?: string | undefined;
-    parameters?: {
-        type: "params";
-        properties: Record<string, {
-            type: "boolean";
-            description?: string | undefined;
-            default?: boolean | undefined;
-            const?: boolean | undefined;
-        } | {
-            type: "integer";
-            minimum?: number | undefined;
-            maximum?: number | undefined;
-            description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
-            enum?: number[] | undefined;
-        } | {
-            type: "string";
-            description?: string | undefined;
-            default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-            minGraphemes?: number | undefined;
-            maxGraphemes?: number | undefined;
-            knownValues?: string[] | undefined;
-        } | {
-            type: "unknown";
-            description?: string | undefined;
-        } | {
-            type: "array";
-            items: {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            };
-            description?: string | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-        }>;
-        description?: string | undefined;
-        required?: string[] | undefined;
-    } | undefined;
     output?: {
         encoding: string;
         description?: string | undefined;
@@ -13539,26 +13471,26 @@ export declare const lexUserType: z.ZodType<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -13585,32 +13517,32 @@ export declare const lexUserType: z.ZodType<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -13637,17 +13569,85 @@ export declare const lexUserType: z.ZodType<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
+    } | undefined;
+    parameters?: {
+        type: "params";
+        properties: Record<string, {
+            type: "boolean";
+            default?: boolean | undefined;
+            description?: string | undefined;
+            const?: boolean | undefined;
+        } | {
+            type: "integer";
+            default?: number | undefined;
+            minimum?: number | undefined;
+            maximum?: number | undefined;
+            description?: string | undefined;
+            enum?: number[] | undefined;
+            const?: number | undefined;
+        } | {
+            type: "string";
+            default?: string | undefined;
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+            minGraphemes?: number | undefined;
+            maxGraphemes?: number | undefined;
+            knownValues?: string[] | undefined;
+        } | {
+            type: "unknown";
+            description?: string | undefined;
+        } | {
+            type: "array";
+            items: {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            };
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+        }>;
+        required?: string[] | undefined;
+        description?: string | undefined;
     } | undefined;
     errors?: {
         name: string;
@@ -13655,205 +13655,6 @@ export declare const lexUserType: z.ZodType<{
     }[] | undefined;
 } | {
     type: "procedure";
-    description?: string | undefined;
-    parameters?: {
-        type: "params";
-        properties: Record<string, {
-            type: "boolean";
-            description?: string | undefined;
-            default?: boolean | undefined;
-            const?: boolean | undefined;
-        } | {
-            type: "integer";
-            minimum?: number | undefined;
-            maximum?: number | undefined;
-            description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
-            enum?: number[] | undefined;
-        } | {
-            type: "string";
-            description?: string | undefined;
-            default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-            minGraphemes?: number | undefined;
-            maxGraphemes?: number | undefined;
-            knownValues?: string[] | undefined;
-        } | {
-            type: "unknown";
-            description?: string | undefined;
-        } | {
-            type: "array";
-            items: {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            };
-            description?: string | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-        }>;
-        description?: string | undefined;
-        required?: string[] | undefined;
-    } | undefined;
-    output?: {
-        encoding: string;
-        description?: string | undefined;
-        schema?: {
-            type: "ref";
-            ref: string;
-            description?: string | undefined;
-        } | {
-            type: "union";
-            refs: string[];
-            description?: string | undefined;
-            closed?: boolean | undefined;
-        } | {
-            type: "object";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "bytes";
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            } | {
-                type: "cid-link";
-                description?: string | undefined;
-            } | {
-                type: "ref";
-                ref: string;
-                description?: string | undefined;
-            } | {
-                type: "union";
-                refs: string[];
-                description?: string | undefined;
-                closed?: boolean | undefined;
-            } | {
-                type: "blob";
-                description?: string | undefined;
-                accept?: string[] | undefined;
-                maxSize?: number | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                } | {
-                    type: "bytes";
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                } | {
-                    type: "cid-link";
-                    description?: string | undefined;
-                } | {
-                    type: "ref";
-                    ref: string;
-                    description?: string | undefined;
-                } | {
-                    type: "union";
-                    refs: string[];
-                    description?: string | undefined;
-                    closed?: boolean | undefined;
-                } | {
-                    type: "blob";
-                    description?: string | undefined;
-                    accept?: string[] | undefined;
-                    maxSize?: number | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-            nullable?: string[] | undefined;
-        } | undefined;
-    } | undefined;
-    errors?: {
-        name: string;
-        description?: string | undefined;
-    }[] | undefined;
     input?: {
         encoding: string;
         description?: string | undefined;
@@ -13870,26 +13671,26 @@ export declare const lexUserType: z.ZodType<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -13916,32 +13717,32 @@ export declare const lexUserType: z.ZodType<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -13968,18 +13769,217 @@ export declare const lexUserType: z.ZodType<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     } | undefined;
+    description?: string | undefined;
+    output?: {
+        encoding: string;
+        description?: string | undefined;
+        schema?: {
+            type: "ref";
+            ref: string;
+            description?: string | undefined;
+        } | {
+            type: "union";
+            refs: string[];
+            description?: string | undefined;
+            closed?: boolean | undefined;
+        } | {
+            type: "object";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "bytes";
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            } | {
+                type: "cid-link";
+                description?: string | undefined;
+            } | {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "blob";
+                description?: string | undefined;
+                maxSize?: number | undefined;
+                accept?: string[] | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+            nullable?: string[] | undefined;
+        } | undefined;
+    } | undefined;
+    parameters?: {
+        type: "params";
+        properties: Record<string, {
+            type: "boolean";
+            default?: boolean | undefined;
+            description?: string | undefined;
+            const?: boolean | undefined;
+        } | {
+            type: "integer";
+            default?: number | undefined;
+            minimum?: number | undefined;
+            maximum?: number | undefined;
+            description?: string | undefined;
+            enum?: number[] | undefined;
+            const?: number | undefined;
+        } | {
+            type: "string";
+            default?: string | undefined;
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+            minGraphemes?: number | undefined;
+            maxGraphemes?: number | undefined;
+            knownValues?: string[] | undefined;
+        } | {
+            type: "unknown";
+            description?: string | undefined;
+        } | {
+            type: "array";
+            items: {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            };
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+        }>;
+        required?: string[] | undefined;
+        description?: string | undefined;
+    } | undefined;
+    errors?: {
+        name: string;
+        description?: string | undefined;
+    }[] | undefined;
 } | {
     type: "subscription";
     message?: {
@@ -13997,26 +13997,26 @@ export declare const lexUserType: z.ZodType<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -14043,32 +14043,32 @@ export declare const lexUserType: z.ZodType<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -14095,15 +14095,15 @@ export declare const lexUserType: z.ZodType<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     } | undefined;
@@ -14112,26 +14112,26 @@ export declare const lexUserType: z.ZodType<{
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -14142,26 +14142,26 @@ export declare const lexUserType: z.ZodType<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -14173,8 +14173,8 @@ export declare const lexUserType: z.ZodType<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     } | undefined;
     errors?: {
         name: string;
@@ -14186,26 +14186,26 @@ export declare const lexUserType: z.ZodType<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -14232,32 +14232,32 @@ export declare const lexUserType: z.ZodType<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -14284,41 +14284,41 @@ export declare const lexUserType: z.ZodType<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     };
     description?: string | undefined;
     key?: string | undefined;
 }, z.ZodTypeDef, {
     type: "boolean";
-    description?: string | undefined;
     default?: boolean | undefined;
+    description?: string | undefined;
     const?: boolean | undefined;
 } | {
     type: "integer";
+    default?: number | undefined;
     minimum?: number | undefined;
     maximum?: number | undefined;
     description?: string | undefined;
-    default?: number | undefined;
-    const?: number | undefined;
     enum?: number[] | undefined;
+    const?: number | undefined;
 } | {
     type: "string";
-    description?: string | undefined;
     default?: string | undefined;
-    const?: string | undefined;
-    enum?: string[] | undefined;
-    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+    description?: string | undefined;
     minLength?: number | undefined;
     maxLength?: number | undefined;
+    enum?: string[] | undefined;
+    const?: string | undefined;
+    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
     minGraphemes?: number | undefined;
     maxGraphemes?: number | undefined;
     knownValues?: string[] | undefined;
@@ -14336,32 +14336,32 @@ export declare const lexUserType: z.ZodType<{
 } | {
     type: "blob";
     description?: string | undefined;
-    accept?: string[] | undefined;
     maxSize?: number | undefined;
+    accept?: string[] | undefined;
 } | {
     type: "array";
     items: {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -14388,8 +14388,8 @@ export declare const lexUserType: z.ZodType<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     };
     description?: string | undefined;
     minLength?: number | undefined;
@@ -14401,26 +14401,26 @@ export declare const lexUserType: z.ZodType<{
     type: "object";
     properties: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -14447,32 +14447,32 @@ export declare const lexUserType: z.ZodType<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -14499,87 +14499,19 @@ export declare const lexUserType: z.ZodType<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
     }>;
-    description?: string | undefined;
     required?: string[] | undefined;
+    description?: string | undefined;
     nullable?: string[] | undefined;
 } | {
     type: "query";
     description?: string | undefined;
-    parameters?: {
-        type: "params";
-        properties: Record<string, {
-            type: "boolean";
-            description?: string | undefined;
-            default?: boolean | undefined;
-            const?: boolean | undefined;
-        } | {
-            type: "integer";
-            minimum?: number | undefined;
-            maximum?: number | undefined;
-            description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
-            enum?: number[] | undefined;
-        } | {
-            type: "string";
-            description?: string | undefined;
-            default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-            minGraphemes?: number | undefined;
-            maxGraphemes?: number | undefined;
-            knownValues?: string[] | undefined;
-        } | {
-            type: "unknown";
-            description?: string | undefined;
-        } | {
-            type: "array";
-            items: {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            };
-            description?: string | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-        }>;
-        description?: string | undefined;
-        required?: string[] | undefined;
-    } | undefined;
     output?: {
         encoding: string;
         description?: string | undefined;
@@ -14596,26 +14528,26 @@ export declare const lexUserType: z.ZodType<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -14642,32 +14574,32 @@ export declare const lexUserType: z.ZodType<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -14694,17 +14626,85 @@ export declare const lexUserType: z.ZodType<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
+    } | undefined;
+    parameters?: {
+        type: "params";
+        properties: Record<string, {
+            type: "boolean";
+            default?: boolean | undefined;
+            description?: string | undefined;
+            const?: boolean | undefined;
+        } | {
+            type: "integer";
+            default?: number | undefined;
+            minimum?: number | undefined;
+            maximum?: number | undefined;
+            description?: string | undefined;
+            enum?: number[] | undefined;
+            const?: number | undefined;
+        } | {
+            type: "string";
+            default?: string | undefined;
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+            minGraphemes?: number | undefined;
+            maxGraphemes?: number | undefined;
+            knownValues?: string[] | undefined;
+        } | {
+            type: "unknown";
+            description?: string | undefined;
+        } | {
+            type: "array";
+            items: {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            };
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+        }>;
+        required?: string[] | undefined;
+        description?: string | undefined;
     } | undefined;
     errors?: {
         name: string;
@@ -14712,205 +14712,6 @@ export declare const lexUserType: z.ZodType<{
     }[] | undefined;
 } | {
     type: "procedure";
-    description?: string | undefined;
-    parameters?: {
-        type: "params";
-        properties: Record<string, {
-            type: "boolean";
-            description?: string | undefined;
-            default?: boolean | undefined;
-            const?: boolean | undefined;
-        } | {
-            type: "integer";
-            minimum?: number | undefined;
-            maximum?: number | undefined;
-            description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
-            enum?: number[] | undefined;
-        } | {
-            type: "string";
-            description?: string | undefined;
-            default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-            minGraphemes?: number | undefined;
-            maxGraphemes?: number | undefined;
-            knownValues?: string[] | undefined;
-        } | {
-            type: "unknown";
-            description?: string | undefined;
-        } | {
-            type: "array";
-            items: {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            };
-            description?: string | undefined;
-            minLength?: number | undefined;
-            maxLength?: number | undefined;
-        }>;
-        description?: string | undefined;
-        required?: string[] | undefined;
-    } | undefined;
-    output?: {
-        encoding: string;
-        description?: string | undefined;
-        schema?: {
-            type: "ref";
-            ref: string;
-            description?: string | undefined;
-        } | {
-            type: "union";
-            refs: string[];
-            description?: string | undefined;
-            closed?: boolean | undefined;
-        } | {
-            type: "object";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "bytes";
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            } | {
-                type: "cid-link";
-                description?: string | undefined;
-            } | {
-                type: "ref";
-                ref: string;
-                description?: string | undefined;
-            } | {
-                type: "union";
-                refs: string[];
-                description?: string | undefined;
-                closed?: boolean | undefined;
-            } | {
-                type: "blob";
-                description?: string | undefined;
-                accept?: string[] | undefined;
-                maxSize?: number | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                } | {
-                    type: "bytes";
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                } | {
-                    type: "cid-link";
-                    description?: string | undefined;
-                } | {
-                    type: "ref";
-                    ref: string;
-                    description?: string | undefined;
-                } | {
-                    type: "union";
-                    refs: string[];
-                    description?: string | undefined;
-                    closed?: boolean | undefined;
-                } | {
-                    type: "blob";
-                    description?: string | undefined;
-                    accept?: string[] | undefined;
-                    maxSize?: number | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-            nullable?: string[] | undefined;
-        } | undefined;
-    } | undefined;
-    errors?: {
-        name: string;
-        description?: string | undefined;
-    }[] | undefined;
     input?: {
         encoding: string;
         description?: string | undefined;
@@ -14927,26 +14728,26 @@ export declare const lexUserType: z.ZodType<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -14973,32 +14774,32 @@ export declare const lexUserType: z.ZodType<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -15025,18 +14826,217 @@ export declare const lexUserType: z.ZodType<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     } | undefined;
+    description?: string | undefined;
+    output?: {
+        encoding: string;
+        description?: string | undefined;
+        schema?: {
+            type: "ref";
+            ref: string;
+            description?: string | undefined;
+        } | {
+            type: "union";
+            refs: string[];
+            description?: string | undefined;
+            closed?: boolean | undefined;
+        } | {
+            type: "object";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "bytes";
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            } | {
+                type: "cid-link";
+                description?: string | undefined;
+            } | {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "blob";
+                description?: string | undefined;
+                maxSize?: number | undefined;
+                accept?: string[] | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+            nullable?: string[] | undefined;
+        } | undefined;
+    } | undefined;
+    parameters?: {
+        type: "params";
+        properties: Record<string, {
+            type: "boolean";
+            default?: boolean | undefined;
+            description?: string | undefined;
+            const?: boolean | undefined;
+        } | {
+            type: "integer";
+            default?: number | undefined;
+            minimum?: number | undefined;
+            maximum?: number | undefined;
+            description?: string | undefined;
+            enum?: number[] | undefined;
+            const?: number | undefined;
+        } | {
+            type: "string";
+            default?: string | undefined;
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+            minGraphemes?: number | undefined;
+            maxGraphemes?: number | undefined;
+            knownValues?: string[] | undefined;
+        } | {
+            type: "unknown";
+            description?: string | undefined;
+        } | {
+            type: "array";
+            items: {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            };
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+        }>;
+        required?: string[] | undefined;
+        description?: string | undefined;
+    } | undefined;
+    errors?: {
+        name: string;
+        description?: string | undefined;
+    }[] | undefined;
 } | {
     type: "subscription";
     message?: {
@@ -15054,26 +15054,26 @@ export declare const lexUserType: z.ZodType<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -15100,32 +15100,32 @@ export declare const lexUserType: z.ZodType<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -15152,15 +15152,15 @@ export declare const lexUserType: z.ZodType<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         } | undefined;
     } | undefined;
@@ -15169,26 +15169,26 @@ export declare const lexUserType: z.ZodType<{
         type: "params";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -15199,26 +15199,26 @@ export declare const lexUserType: z.ZodType<{
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -15230,8 +15230,8 @@ export declare const lexUserType: z.ZodType<{
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
     } | undefined;
     errors?: {
         name: string;
@@ -15243,26 +15243,26 @@ export declare const lexUserType: z.ZodType<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -15289,32 +15289,32 @@ export declare const lexUserType: z.ZodType<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -15341,15 +15341,15 @@ export declare const lexUserType: z.ZodType<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     };
     description?: string | undefined;
@@ -15363,26 +15363,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     description: z.ZodOptional<z.ZodString>;
     defs: z.ZodRecord<z.ZodString, z.ZodType<{
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -15400,32 +15400,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -15452,8 +15452,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
@@ -15465,26 +15465,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -15511,32 +15511,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -15563,87 +15563,19 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     } | {
         type: "query";
         description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
         output?: {
             encoding: string;
             description?: string | undefined;
@@ -15660,26 +15592,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -15706,32 +15638,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -15758,17 +15690,85 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -15776,205 +15776,6 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         }[] | undefined;
     } | {
         type: "procedure";
-        description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
-        output?: {
-            encoding: string;
-            description?: string | undefined;
-            schema?: {
-                type: "ref";
-                ref: string;
-                description?: string | undefined;
-            } | {
-                type: "union";
-                refs: string[];
-                description?: string | undefined;
-                closed?: boolean | undefined;
-            } | {
-                type: "object";
-                properties: Record<string, {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                } | {
-                    type: "bytes";
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                } | {
-                    type: "cid-link";
-                    description?: string | undefined;
-                } | {
-                    type: "ref";
-                    ref: string;
-                    description?: string | undefined;
-                } | {
-                    type: "union";
-                    refs: string[];
-                    description?: string | undefined;
-                    closed?: boolean | undefined;
-                } | {
-                    type: "blob";
-                    description?: string | undefined;
-                    accept?: string[] | undefined;
-                    maxSize?: number | undefined;
-                } | {
-                    type: "array";
-                    items: {
-                        type: "boolean";
-                        description?: string | undefined;
-                        default?: boolean | undefined;
-                        const?: boolean | undefined;
-                    } | {
-                        type: "integer";
-                        minimum?: number | undefined;
-                        maximum?: number | undefined;
-                        description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
-                        enum?: number[] | undefined;
-                    } | {
-                        type: "string";
-                        description?: string | undefined;
-                        default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                        minGraphemes?: number | undefined;
-                        maxGraphemes?: number | undefined;
-                        knownValues?: string[] | undefined;
-                    } | {
-                        type: "unknown";
-                        description?: string | undefined;
-                    } | {
-                        type: "bytes";
-                        description?: string | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                    } | {
-                        type: "cid-link";
-                        description?: string | undefined;
-                    } | {
-                        type: "ref";
-                        ref: string;
-                        description?: string | undefined;
-                    } | {
-                        type: "union";
-                        refs: string[];
-                        description?: string | undefined;
-                        closed?: boolean | undefined;
-                    } | {
-                        type: "blob";
-                        description?: string | undefined;
-                        accept?: string[] | undefined;
-                        maxSize?: number | undefined;
-                    };
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                }>;
-                description?: string | undefined;
-                required?: string[] | undefined;
-                nullable?: string[] | undefined;
-            } | undefined;
-        } | undefined;
-        errors?: {
-            name: string;
-            description?: string | undefined;
-        }[] | undefined;
         input?: {
             encoding: string;
             description?: string | undefined;
@@ -15991,26 +15792,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -16037,32 +15838,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -16089,18 +15890,217 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
+        description?: string | undefined;
+        output?: {
+            encoding: string;
+            description?: string | undefined;
+            schema?: {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "object";
+                properties: Record<string, {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                } | {
+                    type: "array";
+                    items: {
+                        type: "boolean";
+                        default?: boolean | undefined;
+                        description?: string | undefined;
+                        const?: boolean | undefined;
+                    } | {
+                        type: "integer";
+                        default?: number | undefined;
+                        minimum?: number | undefined;
+                        maximum?: number | undefined;
+                        description?: string | undefined;
+                        enum?: number[] | undefined;
+                        const?: number | undefined;
+                    } | {
+                        type: "string";
+                        default?: string | undefined;
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                        minGraphemes?: number | undefined;
+                        maxGraphemes?: number | undefined;
+                        knownValues?: string[] | undefined;
+                    } | {
+                        type: "unknown";
+                        description?: string | undefined;
+                    } | {
+                        type: "bytes";
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                    } | {
+                        type: "cid-link";
+                        description?: string | undefined;
+                    } | {
+                        type: "ref";
+                        ref: string;
+                        description?: string | undefined;
+                    } | {
+                        type: "union";
+                        refs: string[];
+                        description?: string | undefined;
+                        closed?: boolean | undefined;
+                    } | {
+                        type: "blob";
+                        description?: string | undefined;
+                        maxSize?: number | undefined;
+                        accept?: string[] | undefined;
+                    };
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                }>;
+                required?: string[] | undefined;
+                description?: string | undefined;
+                nullable?: string[] | undefined;
+            } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+        } | undefined;
+        errors?: {
+            name: string;
+            description?: string | undefined;
+        }[] | undefined;
     } | {
         type: "subscription";
         message?: {
@@ -16118,26 +16118,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -16164,32 +16164,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -16216,15 +16216,15 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
@@ -16233,26 +16233,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "params";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -16263,26 +16263,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -16294,8 +16294,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -16307,26 +16307,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -16353,32 +16353,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -16405,41 +16405,41 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         };
         description?: string | undefined;
         key?: string | undefined;
     }, z.ZodTypeDef, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -16457,32 +16457,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -16509,8 +16509,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
@@ -16522,26 +16522,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -16568,32 +16568,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -16620,87 +16620,19 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     } | {
         type: "query";
         description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
         output?: {
             encoding: string;
             description?: string | undefined;
@@ -16717,26 +16649,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -16763,32 +16695,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -16815,17 +16747,85 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -16833,205 +16833,6 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         }[] | undefined;
     } | {
         type: "procedure";
-        description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
-        output?: {
-            encoding: string;
-            description?: string | undefined;
-            schema?: {
-                type: "ref";
-                ref: string;
-                description?: string | undefined;
-            } | {
-                type: "union";
-                refs: string[];
-                description?: string | undefined;
-                closed?: boolean | undefined;
-            } | {
-                type: "object";
-                properties: Record<string, {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                } | {
-                    type: "bytes";
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                } | {
-                    type: "cid-link";
-                    description?: string | undefined;
-                } | {
-                    type: "ref";
-                    ref: string;
-                    description?: string | undefined;
-                } | {
-                    type: "union";
-                    refs: string[];
-                    description?: string | undefined;
-                    closed?: boolean | undefined;
-                } | {
-                    type: "blob";
-                    description?: string | undefined;
-                    accept?: string[] | undefined;
-                    maxSize?: number | undefined;
-                } | {
-                    type: "array";
-                    items: {
-                        type: "boolean";
-                        description?: string | undefined;
-                        default?: boolean | undefined;
-                        const?: boolean | undefined;
-                    } | {
-                        type: "integer";
-                        minimum?: number | undefined;
-                        maximum?: number | undefined;
-                        description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
-                        enum?: number[] | undefined;
-                    } | {
-                        type: "string";
-                        description?: string | undefined;
-                        default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                        minGraphemes?: number | undefined;
-                        maxGraphemes?: number | undefined;
-                        knownValues?: string[] | undefined;
-                    } | {
-                        type: "unknown";
-                        description?: string | undefined;
-                    } | {
-                        type: "bytes";
-                        description?: string | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                    } | {
-                        type: "cid-link";
-                        description?: string | undefined;
-                    } | {
-                        type: "ref";
-                        ref: string;
-                        description?: string | undefined;
-                    } | {
-                        type: "union";
-                        refs: string[];
-                        description?: string | undefined;
-                        closed?: boolean | undefined;
-                    } | {
-                        type: "blob";
-                        description?: string | undefined;
-                        accept?: string[] | undefined;
-                        maxSize?: number | undefined;
-                    };
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                }>;
-                description?: string | undefined;
-                required?: string[] | undefined;
-                nullable?: string[] | undefined;
-            } | undefined;
-        } | undefined;
-        errors?: {
-            name: string;
-            description?: string | undefined;
-        }[] | undefined;
         input?: {
             encoding: string;
             description?: string | undefined;
@@ -17048,26 +16849,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -17094,32 +16895,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -17146,18 +16947,217 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
+        description?: string | undefined;
+        output?: {
+            encoding: string;
+            description?: string | undefined;
+            schema?: {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "object";
+                properties: Record<string, {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                } | {
+                    type: "array";
+                    items: {
+                        type: "boolean";
+                        default?: boolean | undefined;
+                        description?: string | undefined;
+                        const?: boolean | undefined;
+                    } | {
+                        type: "integer";
+                        default?: number | undefined;
+                        minimum?: number | undefined;
+                        maximum?: number | undefined;
+                        description?: string | undefined;
+                        enum?: number[] | undefined;
+                        const?: number | undefined;
+                    } | {
+                        type: "string";
+                        default?: string | undefined;
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                        minGraphemes?: number | undefined;
+                        maxGraphemes?: number | undefined;
+                        knownValues?: string[] | undefined;
+                    } | {
+                        type: "unknown";
+                        description?: string | undefined;
+                    } | {
+                        type: "bytes";
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                    } | {
+                        type: "cid-link";
+                        description?: string | undefined;
+                    } | {
+                        type: "ref";
+                        ref: string;
+                        description?: string | undefined;
+                    } | {
+                        type: "union";
+                        refs: string[];
+                        description?: string | undefined;
+                        closed?: boolean | undefined;
+                    } | {
+                        type: "blob";
+                        description?: string | undefined;
+                        maxSize?: number | undefined;
+                        accept?: string[] | undefined;
+                    };
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                }>;
+                required?: string[] | undefined;
+                description?: string | undefined;
+                nullable?: string[] | undefined;
+            } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+        } | undefined;
+        errors?: {
+            name: string;
+            description?: string | undefined;
+        }[] | undefined;
     } | {
         type: "subscription";
         message?: {
@@ -17175,26 +17175,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -17221,32 +17221,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -17273,15 +17273,15 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
@@ -17290,26 +17290,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "params";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -17320,26 +17320,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -17351,8 +17351,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -17364,26 +17364,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -17410,32 +17410,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -17462,15 +17462,15 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         };
         description?: string | undefined;
@@ -17481,26 +17481,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     id: string;
     defs: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -17518,32 +17518,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -17570,8 +17570,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
@@ -17583,26 +17583,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -17629,32 +17629,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -17681,87 +17681,19 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     } | {
         type: "query";
         description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
         output?: {
             encoding: string;
             description?: string | undefined;
@@ -17778,26 +17710,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -17824,32 +17756,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -17876,17 +17808,85 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -17894,205 +17894,6 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         }[] | undefined;
     } | {
         type: "procedure";
-        description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
-        output?: {
-            encoding: string;
-            description?: string | undefined;
-            schema?: {
-                type: "ref";
-                ref: string;
-                description?: string | undefined;
-            } | {
-                type: "union";
-                refs: string[];
-                description?: string | undefined;
-                closed?: boolean | undefined;
-            } | {
-                type: "object";
-                properties: Record<string, {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                } | {
-                    type: "bytes";
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                } | {
-                    type: "cid-link";
-                    description?: string | undefined;
-                } | {
-                    type: "ref";
-                    ref: string;
-                    description?: string | undefined;
-                } | {
-                    type: "union";
-                    refs: string[];
-                    description?: string | undefined;
-                    closed?: boolean | undefined;
-                } | {
-                    type: "blob";
-                    description?: string | undefined;
-                    accept?: string[] | undefined;
-                    maxSize?: number | undefined;
-                } | {
-                    type: "array";
-                    items: {
-                        type: "boolean";
-                        description?: string | undefined;
-                        default?: boolean | undefined;
-                        const?: boolean | undefined;
-                    } | {
-                        type: "integer";
-                        minimum?: number | undefined;
-                        maximum?: number | undefined;
-                        description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
-                        enum?: number[] | undefined;
-                    } | {
-                        type: "string";
-                        description?: string | undefined;
-                        default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                        minGraphemes?: number | undefined;
-                        maxGraphemes?: number | undefined;
-                        knownValues?: string[] | undefined;
-                    } | {
-                        type: "unknown";
-                        description?: string | undefined;
-                    } | {
-                        type: "bytes";
-                        description?: string | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                    } | {
-                        type: "cid-link";
-                        description?: string | undefined;
-                    } | {
-                        type: "ref";
-                        ref: string;
-                        description?: string | undefined;
-                    } | {
-                        type: "union";
-                        refs: string[];
-                        description?: string | undefined;
-                        closed?: boolean | undefined;
-                    } | {
-                        type: "blob";
-                        description?: string | undefined;
-                        accept?: string[] | undefined;
-                        maxSize?: number | undefined;
-                    };
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                }>;
-                description?: string | undefined;
-                required?: string[] | undefined;
-                nullable?: string[] | undefined;
-            } | undefined;
-        } | undefined;
-        errors?: {
-            name: string;
-            description?: string | undefined;
-        }[] | undefined;
         input?: {
             encoding: string;
             description?: string | undefined;
@@ -18109,26 +17910,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -18155,32 +17956,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -18207,18 +18008,217 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
+        description?: string | undefined;
+        output?: {
+            encoding: string;
+            description?: string | undefined;
+            schema?: {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "object";
+                properties: Record<string, {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                } | {
+                    type: "array";
+                    items: {
+                        type: "boolean";
+                        default?: boolean | undefined;
+                        description?: string | undefined;
+                        const?: boolean | undefined;
+                    } | {
+                        type: "integer";
+                        default?: number | undefined;
+                        minimum?: number | undefined;
+                        maximum?: number | undefined;
+                        description?: string | undefined;
+                        enum?: number[] | undefined;
+                        const?: number | undefined;
+                    } | {
+                        type: "string";
+                        default?: string | undefined;
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                        minGraphemes?: number | undefined;
+                        maxGraphemes?: number | undefined;
+                        knownValues?: string[] | undefined;
+                    } | {
+                        type: "unknown";
+                        description?: string | undefined;
+                    } | {
+                        type: "bytes";
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                    } | {
+                        type: "cid-link";
+                        description?: string | undefined;
+                    } | {
+                        type: "ref";
+                        ref: string;
+                        description?: string | undefined;
+                    } | {
+                        type: "union";
+                        refs: string[];
+                        description?: string | undefined;
+                        closed?: boolean | undefined;
+                    } | {
+                        type: "blob";
+                        description?: string | undefined;
+                        maxSize?: number | undefined;
+                        accept?: string[] | undefined;
+                    };
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                }>;
+                required?: string[] | undefined;
+                description?: string | undefined;
+                nullable?: string[] | undefined;
+            } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+        } | undefined;
+        errors?: {
+            name: string;
+            description?: string | undefined;
+        }[] | undefined;
     } | {
         type: "subscription";
         message?: {
@@ -18236,26 +18236,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -18282,32 +18282,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -18334,15 +18334,15 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
@@ -18351,26 +18351,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "params";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -18381,26 +18381,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -18412,8 +18412,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -18425,26 +18425,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -18471,32 +18471,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -18523,15 +18523,15 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         };
         description?: string | undefined;
@@ -18544,26 +18544,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     id: string;
     defs: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -18581,32 +18581,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -18633,8 +18633,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
@@ -18646,26 +18646,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -18692,32 +18692,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -18744,87 +18744,19 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     } | {
         type: "query";
         description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
         output?: {
             encoding: string;
             description?: string | undefined;
@@ -18841,26 +18773,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -18887,32 +18819,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -18939,17 +18871,85 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -18957,205 +18957,6 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         }[] | undefined;
     } | {
         type: "procedure";
-        description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
-        output?: {
-            encoding: string;
-            description?: string | undefined;
-            schema?: {
-                type: "ref";
-                ref: string;
-                description?: string | undefined;
-            } | {
-                type: "union";
-                refs: string[];
-                description?: string | undefined;
-                closed?: boolean | undefined;
-            } | {
-                type: "object";
-                properties: Record<string, {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                } | {
-                    type: "bytes";
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                } | {
-                    type: "cid-link";
-                    description?: string | undefined;
-                } | {
-                    type: "ref";
-                    ref: string;
-                    description?: string | undefined;
-                } | {
-                    type: "union";
-                    refs: string[];
-                    description?: string | undefined;
-                    closed?: boolean | undefined;
-                } | {
-                    type: "blob";
-                    description?: string | undefined;
-                    accept?: string[] | undefined;
-                    maxSize?: number | undefined;
-                } | {
-                    type: "array";
-                    items: {
-                        type: "boolean";
-                        description?: string | undefined;
-                        default?: boolean | undefined;
-                        const?: boolean | undefined;
-                    } | {
-                        type: "integer";
-                        minimum?: number | undefined;
-                        maximum?: number | undefined;
-                        description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
-                        enum?: number[] | undefined;
-                    } | {
-                        type: "string";
-                        description?: string | undefined;
-                        default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                        minGraphemes?: number | undefined;
-                        maxGraphemes?: number | undefined;
-                        knownValues?: string[] | undefined;
-                    } | {
-                        type: "unknown";
-                        description?: string | undefined;
-                    } | {
-                        type: "bytes";
-                        description?: string | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                    } | {
-                        type: "cid-link";
-                        description?: string | undefined;
-                    } | {
-                        type: "ref";
-                        ref: string;
-                        description?: string | undefined;
-                    } | {
-                        type: "union";
-                        refs: string[];
-                        description?: string | undefined;
-                        closed?: boolean | undefined;
-                    } | {
-                        type: "blob";
-                        description?: string | undefined;
-                        accept?: string[] | undefined;
-                        maxSize?: number | undefined;
-                    };
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                }>;
-                description?: string | undefined;
-                required?: string[] | undefined;
-                nullable?: string[] | undefined;
-            } | undefined;
-        } | undefined;
-        errors?: {
-            name: string;
-            description?: string | undefined;
-        }[] | undefined;
         input?: {
             encoding: string;
             description?: string | undefined;
@@ -19172,26 +18973,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -19218,32 +19019,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -19270,18 +19071,217 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
+        description?: string | undefined;
+        output?: {
+            encoding: string;
+            description?: string | undefined;
+            schema?: {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "object";
+                properties: Record<string, {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                } | {
+                    type: "array";
+                    items: {
+                        type: "boolean";
+                        default?: boolean | undefined;
+                        description?: string | undefined;
+                        const?: boolean | undefined;
+                    } | {
+                        type: "integer";
+                        default?: number | undefined;
+                        minimum?: number | undefined;
+                        maximum?: number | undefined;
+                        description?: string | undefined;
+                        enum?: number[] | undefined;
+                        const?: number | undefined;
+                    } | {
+                        type: "string";
+                        default?: string | undefined;
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                        minGraphemes?: number | undefined;
+                        maxGraphemes?: number | undefined;
+                        knownValues?: string[] | undefined;
+                    } | {
+                        type: "unknown";
+                        description?: string | undefined;
+                    } | {
+                        type: "bytes";
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                    } | {
+                        type: "cid-link";
+                        description?: string | undefined;
+                    } | {
+                        type: "ref";
+                        ref: string;
+                        description?: string | undefined;
+                    } | {
+                        type: "union";
+                        refs: string[];
+                        description?: string | undefined;
+                        closed?: boolean | undefined;
+                    } | {
+                        type: "blob";
+                        description?: string | undefined;
+                        maxSize?: number | undefined;
+                        accept?: string[] | undefined;
+                    };
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                }>;
+                required?: string[] | undefined;
+                description?: string | undefined;
+                nullable?: string[] | undefined;
+            } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+        } | undefined;
+        errors?: {
+            name: string;
+            description?: string | undefined;
+        }[] | undefined;
     } | {
         type: "subscription";
         message?: {
@@ -19299,26 +19299,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -19345,32 +19345,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -19397,15 +19397,15 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
@@ -19414,26 +19414,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "params";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -19444,26 +19444,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -19475,8 +19475,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -19488,26 +19488,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -19534,32 +19534,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -19586,15 +19586,15 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         };
         description?: string | undefined;
@@ -19607,26 +19607,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     id: string;
     defs: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -19644,32 +19644,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -19696,8 +19696,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
@@ -19709,26 +19709,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -19755,32 +19755,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -19807,87 +19807,19 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     } | {
         type: "query";
         description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
         output?: {
             encoding: string;
             description?: string | undefined;
@@ -19904,26 +19836,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -19950,32 +19882,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -20002,17 +19934,85 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -20020,205 +20020,6 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         }[] | undefined;
     } | {
         type: "procedure";
-        description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
-        output?: {
-            encoding: string;
-            description?: string | undefined;
-            schema?: {
-                type: "ref";
-                ref: string;
-                description?: string | undefined;
-            } | {
-                type: "union";
-                refs: string[];
-                description?: string | undefined;
-                closed?: boolean | undefined;
-            } | {
-                type: "object";
-                properties: Record<string, {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                } | {
-                    type: "bytes";
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                } | {
-                    type: "cid-link";
-                    description?: string | undefined;
-                } | {
-                    type: "ref";
-                    ref: string;
-                    description?: string | undefined;
-                } | {
-                    type: "union";
-                    refs: string[];
-                    description?: string | undefined;
-                    closed?: boolean | undefined;
-                } | {
-                    type: "blob";
-                    description?: string | undefined;
-                    accept?: string[] | undefined;
-                    maxSize?: number | undefined;
-                } | {
-                    type: "array";
-                    items: {
-                        type: "boolean";
-                        description?: string | undefined;
-                        default?: boolean | undefined;
-                        const?: boolean | undefined;
-                    } | {
-                        type: "integer";
-                        minimum?: number | undefined;
-                        maximum?: number | undefined;
-                        description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
-                        enum?: number[] | undefined;
-                    } | {
-                        type: "string";
-                        description?: string | undefined;
-                        default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                        minGraphemes?: number | undefined;
-                        maxGraphemes?: number | undefined;
-                        knownValues?: string[] | undefined;
-                    } | {
-                        type: "unknown";
-                        description?: string | undefined;
-                    } | {
-                        type: "bytes";
-                        description?: string | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                    } | {
-                        type: "cid-link";
-                        description?: string | undefined;
-                    } | {
-                        type: "ref";
-                        ref: string;
-                        description?: string | undefined;
-                    } | {
-                        type: "union";
-                        refs: string[];
-                        description?: string | undefined;
-                        closed?: boolean | undefined;
-                    } | {
-                        type: "blob";
-                        description?: string | undefined;
-                        accept?: string[] | undefined;
-                        maxSize?: number | undefined;
-                    };
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                }>;
-                description?: string | undefined;
-                required?: string[] | undefined;
-                nullable?: string[] | undefined;
-            } | undefined;
-        } | undefined;
-        errors?: {
-            name: string;
-            description?: string | undefined;
-        }[] | undefined;
         input?: {
             encoding: string;
             description?: string | undefined;
@@ -20235,26 +20036,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -20281,32 +20082,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -20333,18 +20134,217 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
+        description?: string | undefined;
+        output?: {
+            encoding: string;
+            description?: string | undefined;
+            schema?: {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "object";
+                properties: Record<string, {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                } | {
+                    type: "array";
+                    items: {
+                        type: "boolean";
+                        default?: boolean | undefined;
+                        description?: string | undefined;
+                        const?: boolean | undefined;
+                    } | {
+                        type: "integer";
+                        default?: number | undefined;
+                        minimum?: number | undefined;
+                        maximum?: number | undefined;
+                        description?: string | undefined;
+                        enum?: number[] | undefined;
+                        const?: number | undefined;
+                    } | {
+                        type: "string";
+                        default?: string | undefined;
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                        minGraphemes?: number | undefined;
+                        maxGraphemes?: number | undefined;
+                        knownValues?: string[] | undefined;
+                    } | {
+                        type: "unknown";
+                        description?: string | undefined;
+                    } | {
+                        type: "bytes";
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                    } | {
+                        type: "cid-link";
+                        description?: string | undefined;
+                    } | {
+                        type: "ref";
+                        ref: string;
+                        description?: string | undefined;
+                    } | {
+                        type: "union";
+                        refs: string[];
+                        description?: string | undefined;
+                        closed?: boolean | undefined;
+                    } | {
+                        type: "blob";
+                        description?: string | undefined;
+                        maxSize?: number | undefined;
+                        accept?: string[] | undefined;
+                    };
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                }>;
+                required?: string[] | undefined;
+                description?: string | undefined;
+                nullable?: string[] | undefined;
+            } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+        } | undefined;
+        errors?: {
+            name: string;
+            description?: string | undefined;
+        }[] | undefined;
     } | {
         type: "subscription";
         message?: {
@@ -20362,26 +20362,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -20408,32 +20408,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -20460,15 +20460,15 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
@@ -20477,26 +20477,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "params";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -20507,26 +20507,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -20538,8 +20538,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -20551,26 +20551,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -20597,32 +20597,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -20649,15 +20649,15 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         };
         description?: string | undefined;
@@ -20670,26 +20670,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     id: string;
     defs: Record<string, {
         type: "boolean";
-        description?: string | undefined;
         default?: boolean | undefined;
+        description?: string | undefined;
         const?: boolean | undefined;
     } | {
         type: "integer";
+        default?: number | undefined;
         minimum?: number | undefined;
         maximum?: number | undefined;
         description?: string | undefined;
-        default?: number | undefined;
-        const?: number | undefined;
         enum?: number[] | undefined;
+        const?: number | undefined;
     } | {
         type: "string";
-        description?: string | undefined;
         default?: string | undefined;
-        const?: string | undefined;
-        enum?: string[] | undefined;
-        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+        description?: string | undefined;
         minLength?: number | undefined;
         maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
         minGraphemes?: number | undefined;
         maxGraphemes?: number | undefined;
         knownValues?: string[] | undefined;
@@ -20707,32 +20707,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     } | {
         type: "blob";
         description?: string | undefined;
-        accept?: string[] | undefined;
         maxSize?: number | undefined;
+        accept?: string[] | undefined;
     } | {
         type: "array";
         items: {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -20759,8 +20759,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         };
         description?: string | undefined;
         minLength?: number | undefined;
@@ -20772,26 +20772,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         type: "object";
         properties: Record<string, {
             type: "boolean";
-            description?: string | undefined;
             default?: boolean | undefined;
+            description?: string | undefined;
             const?: boolean | undefined;
         } | {
             type: "integer";
+            default?: number | undefined;
             minimum?: number | undefined;
             maximum?: number | undefined;
             description?: string | undefined;
-            default?: number | undefined;
-            const?: number | undefined;
             enum?: number[] | undefined;
+            const?: number | undefined;
         } | {
             type: "string";
-            description?: string | undefined;
             default?: string | undefined;
-            const?: string | undefined;
-            enum?: string[] | undefined;
-            format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+            description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
             minGraphemes?: number | undefined;
             maxGraphemes?: number | undefined;
             knownValues?: string[] | undefined;
@@ -20818,32 +20818,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         } | {
             type: "blob";
             description?: string | undefined;
-            accept?: string[] | undefined;
             maxSize?: number | undefined;
+            accept?: string[] | undefined;
         } | {
             type: "array";
             items: {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -20870,87 +20870,19 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             };
             description?: string | undefined;
             minLength?: number | undefined;
             maxLength?: number | undefined;
         }>;
-        description?: string | undefined;
         required?: string[] | undefined;
+        description?: string | undefined;
         nullable?: string[] | undefined;
     } | {
         type: "query";
         description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
         output?: {
             encoding: string;
             description?: string | undefined;
@@ -20967,26 +20899,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -21013,32 +20945,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -21065,17 +20997,85 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -21083,205 +21083,6 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
         }[] | undefined;
     } | {
         type: "procedure";
-        description?: string | undefined;
-        parameters?: {
-            type: "params";
-            properties: Record<string, {
-                type: "boolean";
-                description?: string | undefined;
-                default?: boolean | undefined;
-                const?: boolean | undefined;
-            } | {
-                type: "integer";
-                minimum?: number | undefined;
-                maximum?: number | undefined;
-                description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
-                enum?: number[] | undefined;
-            } | {
-                type: "string";
-                description?: string | undefined;
-                default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-                minGraphemes?: number | undefined;
-                maxGraphemes?: number | undefined;
-                knownValues?: string[] | undefined;
-            } | {
-                type: "unknown";
-                description?: string | undefined;
-            } | {
-                type: "array";
-                items: {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                };
-                description?: string | undefined;
-                minLength?: number | undefined;
-                maxLength?: number | undefined;
-            }>;
-            description?: string | undefined;
-            required?: string[] | undefined;
-        } | undefined;
-        output?: {
-            encoding: string;
-            description?: string | undefined;
-            schema?: {
-                type: "ref";
-                ref: string;
-                description?: string | undefined;
-            } | {
-                type: "union";
-                refs: string[];
-                description?: string | undefined;
-                closed?: boolean | undefined;
-            } | {
-                type: "object";
-                properties: Record<string, {
-                    type: "boolean";
-                    description?: string | undefined;
-                    default?: boolean | undefined;
-                    const?: boolean | undefined;
-                } | {
-                    type: "integer";
-                    minimum?: number | undefined;
-                    maximum?: number | undefined;
-                    description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
-                    enum?: number[] | undefined;
-                } | {
-                    type: "string";
-                    description?: string | undefined;
-                    default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                    minGraphemes?: number | undefined;
-                    maxGraphemes?: number | undefined;
-                    knownValues?: string[] | undefined;
-                } | {
-                    type: "unknown";
-                    description?: string | undefined;
-                } | {
-                    type: "bytes";
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                } | {
-                    type: "cid-link";
-                    description?: string | undefined;
-                } | {
-                    type: "ref";
-                    ref: string;
-                    description?: string | undefined;
-                } | {
-                    type: "union";
-                    refs: string[];
-                    description?: string | undefined;
-                    closed?: boolean | undefined;
-                } | {
-                    type: "blob";
-                    description?: string | undefined;
-                    accept?: string[] | undefined;
-                    maxSize?: number | undefined;
-                } | {
-                    type: "array";
-                    items: {
-                        type: "boolean";
-                        description?: string | undefined;
-                        default?: boolean | undefined;
-                        const?: boolean | undefined;
-                    } | {
-                        type: "integer";
-                        minimum?: number | undefined;
-                        maximum?: number | undefined;
-                        description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
-                        enum?: number[] | undefined;
-                    } | {
-                        type: "string";
-                        description?: string | undefined;
-                        default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                        minGraphemes?: number | undefined;
-                        maxGraphemes?: number | undefined;
-                        knownValues?: string[] | undefined;
-                    } | {
-                        type: "unknown";
-                        description?: string | undefined;
-                    } | {
-                        type: "bytes";
-                        description?: string | undefined;
-                        minLength?: number | undefined;
-                        maxLength?: number | undefined;
-                    } | {
-                        type: "cid-link";
-                        description?: string | undefined;
-                    } | {
-                        type: "ref";
-                        ref: string;
-                        description?: string | undefined;
-                    } | {
-                        type: "union";
-                        refs: string[];
-                        description?: string | undefined;
-                        closed?: boolean | undefined;
-                    } | {
-                        type: "blob";
-                        description?: string | undefined;
-                        accept?: string[] | undefined;
-                        maxSize?: number | undefined;
-                    };
-                    description?: string | undefined;
-                    minLength?: number | undefined;
-                    maxLength?: number | undefined;
-                }>;
-                description?: string | undefined;
-                required?: string[] | undefined;
-                nullable?: string[] | undefined;
-            } | undefined;
-        } | undefined;
-        errors?: {
-            name: string;
-            description?: string | undefined;
-        }[] | undefined;
         input?: {
             encoding: string;
             description?: string | undefined;
@@ -21298,26 +21099,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -21344,32 +21145,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -21396,18 +21197,217 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
+        description?: string | undefined;
+        output?: {
+            encoding: string;
+            description?: string | undefined;
+            schema?: {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "object";
+                properties: Record<string, {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                } | {
+                    type: "array";
+                    items: {
+                        type: "boolean";
+                        default?: boolean | undefined;
+                        description?: string | undefined;
+                        const?: boolean | undefined;
+                    } | {
+                        type: "integer";
+                        default?: number | undefined;
+                        minimum?: number | undefined;
+                        maximum?: number | undefined;
+                        description?: string | undefined;
+                        enum?: number[] | undefined;
+                        const?: number | undefined;
+                    } | {
+                        type: "string";
+                        default?: string | undefined;
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                        minGraphemes?: number | undefined;
+                        maxGraphemes?: number | undefined;
+                        knownValues?: string[] | undefined;
+                    } | {
+                        type: "unknown";
+                        description?: string | undefined;
+                    } | {
+                        type: "bytes";
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                    } | {
+                        type: "cid-link";
+                        description?: string | undefined;
+                    } | {
+                        type: "ref";
+                        ref: string;
+                        description?: string | undefined;
+                    } | {
+                        type: "union";
+                        refs: string[];
+                        description?: string | undefined;
+                        closed?: boolean | undefined;
+                    } | {
+                        type: "blob";
+                        description?: string | undefined;
+                        maxSize?: number | undefined;
+                        accept?: string[] | undefined;
+                    };
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                }>;
+                required?: string[] | undefined;
+                description?: string | undefined;
+                nullable?: string[] | undefined;
+            } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+        } | undefined;
+        errors?: {
+            name: string;
+            description?: string | undefined;
+        }[] | undefined;
     } | {
         type: "subscription";
         message?: {
@@ -21425,26 +21425,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "object";
                 properties: Record<string, {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -21471,32 +21471,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 } | {
                     type: "array";
                     items: {
                         type: "boolean";
-                        description?: string | undefined;
                         default?: boolean | undefined;
+                        description?: string | undefined;
                         const?: boolean | undefined;
                     } | {
                         type: "integer";
+                        default?: number | undefined;
                         minimum?: number | undefined;
                         maximum?: number | undefined;
                         description?: string | undefined;
-                        default?: number | undefined;
-                        const?: number | undefined;
                         enum?: number[] | undefined;
+                        const?: number | undefined;
                     } | {
                         type: "string";
-                        description?: string | undefined;
                         default?: string | undefined;
-                        const?: string | undefined;
-                        enum?: string[] | undefined;
-                        format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                        description?: string | undefined;
                         minLength?: number | undefined;
                         maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                         minGraphemes?: number | undefined;
                         maxGraphemes?: number | undefined;
                         knownValues?: string[] | undefined;
@@ -21523,15 +21523,15 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                     } | {
                         type: "blob";
                         description?: string | undefined;
-                        accept?: string[] | undefined;
                         maxSize?: number | undefined;
+                        accept?: string[] | undefined;
                     };
                     description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
                 }>;
-                description?: string | undefined;
                 required?: string[] | undefined;
+                description?: string | undefined;
                 nullable?: string[] | undefined;
             } | undefined;
         } | undefined;
@@ -21540,26 +21540,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "params";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -21570,26 +21570,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -21601,8 +21601,8 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
         } | undefined;
         errors?: {
             name: string;
@@ -21614,26 +21614,26 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             type: "object";
             properties: Record<string, {
                 type: "boolean";
-                description?: string | undefined;
                 default?: boolean | undefined;
+                description?: string | undefined;
                 const?: boolean | undefined;
             } | {
                 type: "integer";
+                default?: number | undefined;
                 minimum?: number | undefined;
                 maximum?: number | undefined;
                 description?: string | undefined;
-                default?: number | undefined;
-                const?: number | undefined;
                 enum?: number[] | undefined;
+                const?: number | undefined;
             } | {
                 type: "string";
-                description?: string | undefined;
                 default?: string | undefined;
-                const?: string | undefined;
-                enum?: string[] | undefined;
-                format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                 minGraphemes?: number | undefined;
                 maxGraphemes?: number | undefined;
                 knownValues?: string[] | undefined;
@@ -21660,32 +21660,32 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
             } | {
                 type: "blob";
                 description?: string | undefined;
-                accept?: string[] | undefined;
                 maxSize?: number | undefined;
+                accept?: string[] | undefined;
             } | {
                 type: "array";
                 items: {
                     type: "boolean";
-                    description?: string | undefined;
                     default?: boolean | undefined;
+                    description?: string | undefined;
                     const?: boolean | undefined;
                 } | {
                     type: "integer";
+                    default?: number | undefined;
                     minimum?: number | undefined;
                     maximum?: number | undefined;
                     description?: string | undefined;
-                    default?: number | undefined;
-                    const?: number | undefined;
                     enum?: number[] | undefined;
+                    const?: number | undefined;
                 } | {
                     type: "string";
-                    description?: string | undefined;
                     default?: string | undefined;
-                    const?: string | undefined;
-                    enum?: string[] | undefined;
-                    format?: "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "language" | "tid" | "record-key" | undefined;
+                    description?: string | undefined;
                     minLength?: number | undefined;
                     maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
                     minGraphemes?: number | undefined;
                     maxGraphemes?: number | undefined;
                     knownValues?: string[] | undefined;
@@ -21712,15 +21712,15 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
                 } | {
                     type: "blob";
                     description?: string | undefined;
-                    accept?: string[] | undefined;
                     maxSize?: number | undefined;
+                    accept?: string[] | undefined;
                 };
                 description?: string | undefined;
                 minLength?: number | undefined;
                 maxLength?: number | undefined;
             }>;
-            description?: string | undefined;
             required?: string[] | undefined;
+            description?: string | undefined;
             nullable?: string[] | undefined;
         };
         description?: string | undefined;

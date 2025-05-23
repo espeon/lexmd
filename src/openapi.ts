@@ -1,0 +1,513 @@
+import type {
+  LexiconDoc,
+  LexUserType,
+  LexXrpcQuery,
+  LexXrpcProcedure,
+  LexXrpcSubscription,
+  LexXrpcParameters,
+  LexXrpcBody,
+  LexObject,
+  LexPrimitive,
+  LexArray,
+  LexRef,
+  LexRefUnion,
+  LexRefVariant,
+} from "./types.js";
+
+function convertResponse(
+  id: string,
+  body: LexXrpcBody,
+  schemas: Map<string, any>,
+): any {
+  return {
+    description: body.description || "Success",
+    content: {
+      [body.encoding]: {
+        schema: body.schema
+          ? convertSchemaToOpenAPI(id, body.schema, schemas)
+          : {},
+      },
+    },
+  };
+}
+
+function convertSchemaToOpenAPI(
+  id: string,
+  schema: LexRefVariant | LexObject,
+  schemas: Map<string, any>,
+): any {
+  switch (schema.type) {
+    case "ref":
+      return convertRefSchema(id, schema);
+    case "union":
+      return convertUnionSchema(id, schema, schemas);
+    case "object":
+      return convertObjectSchema(id, schema, schemas);
+    default:
+      return { description: "Unknown schema type" };
+  }
+}
+
+export interface OpenAPISpec {
+  openapi: string;
+  info: {
+    title: string;
+    version: string;
+    description?: string;
+  };
+  paths: Record<string, any>;
+  components?: {
+    schemas?: Record<string, any>;
+  };
+}
+
+export function convertLexiconToOpenAPI(lexicons: LexiconDoc[]): OpenAPISpec {
+  const spec: OpenAPISpec = {
+    openapi: "3.0.3",
+    info: {
+      title: "AT Protocol API",
+      version: "1.0.0",
+      description: "Generated from Lexicon schemas",
+    },
+    paths: {},
+    components: {
+      schemas: {},
+    },
+  };
+
+  const schemas = new Map<string, any>();
+
+  for (const lexicon of lexicons) {
+    const mainDef = lexicon.defs.main;
+    if (mainDef) {
+      // Only process query, procedure, and subscription types
+      if (mainDef.type === "query") {
+        convertQuery(lexicon, mainDef, spec, schemas);
+      } else if (mainDef.type === "procedure") {
+        convertProcedure(lexicon, mainDef, spec, schemas);
+      } else if (mainDef.type === "subscription") {
+        convertSubscription(lexicon, mainDef, spec, schemas);
+      } else {
+        schemas.set(
+          lexicon.id,
+          convertTypeToSchema(lexicon.id, mainDef, schemas),
+        );
+      }
+    }
+
+    // Add any additional definitions as reusable schemas
+    for (const [defName, def] of Object.entries(lexicon.defs)) {
+      if (defName !== "main") {
+        const schemaName = `${lexicon.id}_${defName}`;
+        schemas.set(schemaName, convertTypeToSchema(schemaName, def, schemas));
+      }
+    }
+  }
+
+  // Add all collected schemas to components
+  spec.components!.schemas = Object.fromEntries(schemas);
+
+  return spec;
+}
+
+function convertQuery(
+  lexicon: LexiconDoc,
+  query: LexXrpcQuery,
+  spec: OpenAPISpec,
+  schemas: Map<string, any>,
+): void {
+  const path = `/xrpc/${lexicon.id.replace("#", "_")}`;
+
+  if (!spec.paths[path]) {
+    spec.paths[path] = {};
+  }
+
+  const operation: any = {
+    summary: query.description,
+    operationId: lexicon.id.replace("#", "_"),
+    tags: [lexicon.id.split(".").slice(0, -1).join(".")],
+    responses: {},
+  };
+
+  // Convert parameters
+  if (query.parameters) {
+    operation.parameters = convertParameters(query.parameters, schemas);
+  }
+
+  // Convert output
+  if (query.output) {
+    operation.responses["200"] = convertResponse(
+      lexicon.id.replace("#", "_"),
+      query.output,
+      schemas,
+    );
+  } else {
+    operation.responses["200"] = {
+      description: "Success",
+    };
+  }
+
+  // Convert errors
+  if (query.errors) {
+    const errorResponse = convertErrors(query.errors);
+    if (errorResponse) {
+      operation.responses["400"] = errorResponse;
+    }
+  }
+
+  spec.paths[path].get = operation;
+}
+
+function convertProcedure(
+  lexicon: LexiconDoc,
+  procedure: LexXrpcProcedure,
+  spec: OpenAPISpec,
+  schemas: Map<string, any>,
+): void {
+  const path = `/xrpc/${lexicon.id.replace("#", "_")}`;
+
+  if (!spec.paths[path]) {
+    spec.paths[path] = {};
+  }
+
+  const operation: any = {
+    summary: procedure.description,
+    operationId: lexicon.id.replace("#", "_"),
+    tags: [lexicon.id.split(".").slice(0, -1).join(".")],
+    responses: {},
+  };
+
+  // Convert parameters
+  if (procedure.parameters) {
+    operation.parameters = convertParameters(procedure.parameters, schemas);
+  }
+
+  // Convert input
+  if (procedure.input) {
+    operation.requestBody = {
+      description: procedure.input.description,
+      required: true,
+      content: {
+        [procedure.input.encoding]: {
+          schema: procedure.input.schema
+            ? convertSchemaToOpenAPI(
+                lexicon.id.replace("#", "_"),
+                procedure.input.schema,
+                schemas,
+              )
+            : {},
+        },
+      },
+    };
+  }
+
+  // Convert output
+  if (procedure.output) {
+    operation.responses[200] = convertResponse(
+      lexicon.id,
+      procedure.output,
+      schemas,
+    );
+  } else {
+    operation.responses[200] = {
+      description: "Success",
+    };
+  }
+
+  // Convert errors
+  if (procedure.errors) {
+    const errorResponse = convertErrors(procedure.errors);
+    if (errorResponse) {
+      operation.responses["400"] = errorResponse;
+    }
+  }
+
+  spec.paths[path].post = operation;
+}
+
+function convertSubscription(
+  lexicon: LexiconDoc,
+  subscription: LexXrpcSubscription,
+  spec: OpenAPISpec,
+  schemas: Map<string, any>,
+): void {
+  const path = `/xrpc/${lexicon.id}`;
+
+  if (!spec.paths[path]) {
+    spec.paths[path] = {};
+  }
+
+  // WebSocket endpoint - using OpenAPI extension
+  const operation: any = {
+    summary: subscription.description,
+    operationId: lexicon.id.replace("#", "_"),
+    tags: [lexicon.id.split(".").slice(0, -1).join(".")],
+    "x-websocket": true,
+    responses: {},
+  };
+
+  // Convert parameters
+  if (subscription.parameters) {
+    operation.parameters = convertParameters(subscription.parameters, schemas);
+  }
+
+  // Convert message
+  if (subscription.message) {
+    operation["x-websocket-message"] = {
+      description: subscription.message.description,
+      schema: subscription.message.schema
+        ? convertSchemaToOpenAPI(
+            lexicon.id.replace("#", "_"),
+            subscription.message.schema,
+            schemas,
+          )
+        : {},
+    };
+  }
+
+  // Convert errors
+  if (subscription.errors) {
+    const errorResponse = convertErrors(subscription.errors);
+    if (errorResponse) {
+      operation.responses["400"] = errorResponse;
+    }
+  }
+
+  spec.paths[path].get = operation;
+}
+
+function convertParameters(
+  params: LexXrpcParameters,
+  schemas: Map<string, any>,
+): any[] | undefined {
+  const parameters: any[] = [];
+
+  for (const [name, param] of Object.entries(params.properties)) {
+    const parameter: any = {
+      name,
+      in: "query",
+      required: params.required?.includes(name) || false,
+      description: param.description,
+      schema: convertTypeToSchema(name, param as LexUserType, schemas),
+    };
+
+    parameters.push(parameter);
+  }
+
+  return parameters.length > 0 ? parameters : undefined;
+}
+
+// New error handling function
+function convertErrors(
+  errors: Array<{ name: string; description?: string }> | undefined,
+): any {
+  if (!errors || errors.length === 0) {
+    return undefined; // No errors defined, no 400 response needed
+  }
+
+  const errorNames = errors.map((error) => error.name);
+
+  return {
+    description: "Bad Request",
+    content: {
+      "application/json": {
+        schema: {
+          type: "object",
+          required: ["error", "message"],
+          properties: {
+            error: {
+              type: "string",
+              oneOf: errorNames.map((name) => ({ const: name })),
+            },
+            message: {
+              type: "string",
+            },
+          },
+        },
+      },
+    },
+  };
+}
+
+function convertTypeToSchema(
+  id: string,
+  type: LexUserType,
+  schemas: Map<string, any>,
+): any {
+  switch (type.type) {
+    case "boolean":
+      return convertBooleanSchema(type);
+    case "integer":
+      return convertIntegerSchema(type);
+    case "string":
+      return convertStringSchema(type);
+    case "unknown":
+      return { description: type.description };
+    case "bytes":
+      return {
+        type: "string",
+        format: "byte",
+        description: type.description,
+        minLength: type.minLength,
+        maxLength: type.maxLength,
+      };
+    case "cid-link":
+      return {
+        type: "string",
+        description: type.description || "CID link",
+      };
+    // @ts-ignore we know this can exist
+    case "ref":
+      return convertRefSchema(id, type as LexRef);
+    // @ts-ignore we know this can exist
+    case "union":
+      return convertUnionSchema(id, type as LexRefUnion, schemas);
+    case "array":
+      return convertArraySchema(id, type as LexArray, schemas);
+    case "object":
+      return convertObjectSchema(id, type as LexObject, schemas);
+    case "blob":
+      return {
+        type: "string",
+        format: "binary",
+        description: type.description,
+      };
+    case "token":
+      return {
+        type: "string",
+        description: type.description || "Token",
+      };
+    default:
+      return { description: "Unknown type" };
+  }
+}
+
+function convertBooleanSchema(type: any): any {
+  return {
+    type: "boolean",
+    description: type.description,
+    default: type.const || type.default,
+  };
+}
+
+function convertIntegerSchema(type: any): any {
+  return {
+    type: "integer",
+    description: type.description,
+    default: type.const || type.default,
+    minimum: type.minimum,
+    maximum: type.maximum,
+    enum: type.enum,
+  };
+}
+
+function convertStringSchema(type: any): any {
+  const schema: any = {
+    type: "string",
+    description: type.description,
+    default: type.const || type.default,
+    minLength: type.minLength,
+    maxLength: type.maxLength,
+    enum: type.enum,
+  };
+
+  // Convert format
+  if (type.format) {
+    switch (type.format) {
+      case "datetime":
+        schema.format = "date-time";
+        break;
+      case "uri":
+      case "at-uri":
+        schema.format = "uri";
+        break;
+      default:
+        schema.format = type.format;
+    }
+  }
+
+  return schema;
+}
+
+function convertRefSchema(id: string, ref: LexRef): any {
+  return {
+    $ref: `#/components/schemas/${getRefLabel(id, ref.ref)}`,
+    description: ref.description,
+  };
+}
+
+function getRefLabel(id: string, ref: string) {
+  if (id.includes("_")) {
+    id = id.split("_").slice(0, -1).join("_");
+  }
+  // A local to file reference
+  if (ref.startsWith("#")) {
+    return `${id}${ref.replace("#", "_")}`;
+  }
+
+  // Reference already includes the lexicon name
+  if (ref.includes("#")) {
+    return ref.replace("#", "_");
+  }
+
+  // Reference is just a lexicon name
+  return ref;
+}
+
+function convertUnionSchema(
+  id: string,
+  union: LexRefUnion,
+  schemas: Map<string, any>,
+): any {
+  return {
+    oneOf: union.refs.map((ref) => ({
+      $ref: `#/components/schemas/${getRefLabel(id, ref)}`,
+    })),
+    description: union.description,
+  };
+}
+
+function convertArraySchema(
+  typ: string,
+  array: LexArray,
+  schemas: Map<string, any>,
+): any {
+  return {
+    type: "array",
+    description: array.description,
+    items: convertTypeToSchema(typ, array.items as LexUserType, schemas),
+    minItems: array.minLength,
+    maxItems: array.maxLength,
+  };
+}
+
+function convertObjectSchema(
+  id: string,
+  obj: LexObject,
+  schemas: Map<string, any>,
+): any {
+  const schema: any = {
+    type: "object",
+    description: obj.description,
+    properties: {},
+    required:
+      obj.required && obj.required?.length > 0 ? obj.required : undefined,
+  };
+
+  for (const [propName, propType] of Object.entries(obj.properties)) {
+    schema.properties[propName] = convertTypeToSchema(
+      id,
+      propType as LexUserType,
+      schemas,
+    );
+
+    // Handle nullable properties
+    if (obj.nullable?.includes(propName)) {
+      schema.properties[propName] = {
+        oneOf: [schema.properties[propName]],
+      };
+    }
+  }
+
+  return schema;
+}

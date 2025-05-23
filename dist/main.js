@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import * as BskyLex from "./types.js";
 import config from "./config.js";
+import { convertLexiconToOpenAPI } from "./openapi.js";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
 const PREFIX_TABLE = config.prefixLinkTable;
@@ -298,8 +299,8 @@ description: ${(_a = lexicon.description) !== null && _a !== void 0 ? _a : `Refe
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         const args = process.argv.slice(2);
-        if (args.length !== 2) {
-            console.error("Usage: lexmd <input-dir> <output-dir>");
+        if (args.length < 2 || args.length > 3) {
+            console.error("Usage: lexmd <input-dir> <output-dir> <optional-openapi-file>");
             console.error(`\nEnsure the import paths in main.ts (or .js) match compiled output or TS config.`);
             console.error(`Using Types Import Path Hint: ${config.typesImportPath}`);
             process.exit(1);
@@ -321,18 +322,21 @@ function main() {
             //  filter and map, then construct full file path
             const jsonFiles = dirents
                 .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".json"))
+                // will need node ver 20.12.0 and later due to parentPath!
                 .map((dirent) => path.join(dirent.parentPath, dirent.name));
             if (jsonFiles.length === 0) {
                 console.warn(`No .json files found in ${inputDir} or its subdirectories`);
                 return;
             }
             console.log(`Found ${jsonFiles.length} JSON files recursively. Processing...`);
+            let toOpenApi = [];
             for (const inputFilePath of jsonFiles) {
                 let outputFileName = path.basename(inputFilePath, ".json") + ".md";
                 console.log(`Processing ${inputFilePath}...`);
                 try {
                     const fileContent = yield fs.readFile(inputFilePath, "utf-8");
                     const jsonData = JSON.parse(fileContent);
+                    toOpenApi.push(jsonData);
                     // validate
                     const parseResult = BskyLex.lexiconDoc.safeParse(jsonData);
                     if (!parseResult.success) {
@@ -362,6 +366,14 @@ function main() {
                     }
                     console.error(error.stack);
                 }
+            }
+            // save to file
+            if (args.length > 2) {
+                console.log("Converting to OpenAPI...");
+                const restSpec = convertLexiconToOpenAPI(toOpenApi);
+                const outputFilePath = args[2];
+                yield fs.writeFile(outputFilePath, JSON.stringify(restSpec, null, 2));
+                console.log("  -> Saved to " + outputFilePath);
             }
             console.log("Processing complete.");
         }

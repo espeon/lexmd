@@ -31,6 +31,7 @@ const config = {
     defaultLexiconSeparator: "-",
     includeSourceJson: true,
     typesImportPath: "./types.ts",
+    separateOpenApi: false,
 };
 export default config;
 //# sourceMappingURL=config.js.map

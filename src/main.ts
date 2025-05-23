@@ -2,6 +2,8 @@
 import * as BskyLex from "./types.js";
 import config from "./config.js";
 
+import { convertLexiconToOpenAPI } from "./openapi.js";
+
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import { Dirent } from "node:fs";
@@ -354,8 +356,10 @@ description: ${lexicon.description ?? `Reference for the ${lexicon.id} lexicon`}
 async function main() {
   const args = process.argv.slice(2);
 
-  if (args.length !== 2) {
-    console.error("Usage: lexmd <input-dir> <output-dir>");
+  if (args.length < 2 || args.length > 3) {
+    console.error(
+      "Usage: lexmd <input-dir> <output-dir> <optional-openapi-file>",
+    );
     console.error(
       `\nEnsure the import paths in main.ts (or .js) match compiled output or TS config.`,
     );
@@ -396,6 +400,8 @@ async function main() {
       `Found ${jsonFiles.length} JSON files recursively. Processing...`,
     );
 
+    let toOpenApi = [];
+
     for (const inputFilePath of jsonFiles) {
       let outputFileName = path.basename(inputFilePath, ".json") + ".md";
 
@@ -404,6 +410,7 @@ async function main() {
       try {
         const fileContent = await fs.readFile(inputFilePath, "utf-8");
         const jsonData = JSON.parse(fileContent);
+        toOpenApi.push(jsonData);
 
         // validate
         const parseResult = BskyLex.lexiconDoc.safeParse(jsonData);
@@ -450,6 +457,16 @@ async function main() {
         }
         console.error(error.stack);
       }
+    }
+
+    // save to file
+    if (args.length > 2) {
+      console.log("Converting to OpenAPI...");
+
+      const restSpec = convertLexiconToOpenAPI(toOpenApi);
+      const outputFilePath = args[2];
+      await fs.writeFile(outputFilePath, JSON.stringify(restSpec, null, 2));
+      console.log("  -> Saved to " + outputFilePath);
     }
 
     console.log("Processing complete.");
