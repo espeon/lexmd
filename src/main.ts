@@ -356,9 +356,9 @@ description: ${lexicon.description ?? `Reference for the ${lexicon.id} lexicon`}
 async function main() {
   const args = process.argv.slice(2);
 
-  if (args.length < 2 || args.length > 3) {
+  if (args.length !== 2 && args.length !== 4) {
     console.error(
-      "Usage: lexmd <input-dir> <output-dir> <optional-openapi-file>",
+      "Usage: lexmd <input-dir> <output-dir> [openapi_external_lex_dir optional] [openapi.json-path optional]",
     );
     console.error(
       `\nEnsure the import paths in main.ts (or .js) match compiled output or TS config.`,
@@ -369,52 +369,48 @@ async function main() {
 
   const inputDir = path.resolve(args[0]);
   const outputDir = path.resolve(args[1]);
+  const externalLexDir = args.length === 4 ? path.resolve(args[2]) : null;
+  const openApiPath = args.length === 4 ? path.resolve(args[3]) : null;
 
-  console.log(`Input Directory: ${inputDir}`);
-  console.log(`Output Directory: ${outputDir}`);
+  console.log(`Input Directory (Markdown & OpenAPI): ${inputDir}`);
+  console.log(`Output Directory (Markdown): ${outputDir}`);
+  if (externalLexDir) {
+    console.log(`External Lexicon Directory (OpenAPI only): ${externalLexDir}`);
+  }
+  if (openApiPath) {
+    console.log(`OpenAPI Output Path: ${openApiPath}`);
+  }
   console.log(`Include Source JSON: ${config.includeSourceJson}`);
   console.log(`Using Types Import Path Hint: ${config.typesImportPath}`);
+
+  let openAPILexicons: BskyLex.LexiconDoc[] = [];
 
   try {
     // Use Node's fs.mkdir
     await fs.mkdir(outputDir, { recursive: true });
     console.log(`Ensured output directory exists: ${outputDir}`);
 
-    const dirents: Dirent[] = await fs.readdir(inputDir, {
+    // Process inputDir (Markdown + OpenAPI)
+    const inputDirents: Dirent[] = await fs.readdir(inputDir, {
       withFileTypes: true,
       recursive: true,
     });
-
-    //  filter and map, then construct full file path
-    const jsonFiles = dirents
+    const inputJsonFiles = inputDirents
       .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".json"))
-      // will need node ver 20.12.0 and later due to parentPath!
       .map((dirent) => path.join(dirent.parentPath, dirent.name));
 
-    if (jsonFiles.length === 0) {
-      console.warn(`No .json files found in ${inputDir} or its subdirectories`);
-      return;
-    }
-
     console.log(
-      `Found ${jsonFiles.length} JSON files recursively. Processing...`,
+      `Found ${inputJsonFiles.length} JSON files in ${inputDir} recursively. Processing for Markdown...`,
     );
 
-    let toOpenApi = [];
-
-    for (const inputFilePath of jsonFiles) {
-      let outputFileName = path.basename(inputFilePath, ".json") + ".md";
-
+    for (const inputFilePath of inputJsonFiles) {
       console.log(`Processing ${inputFilePath}...`);
-
       try {
         const fileContent = await fs.readFile(inputFilePath, "utf-8");
         const jsonData = JSON.parse(fileContent);
-        toOpenApi.push(jsonData);
 
         // validate
         const parseResult = BskyLex.lexiconDoc.safeParse(jsonData);
-
         if (!parseResult.success) {
           console.warn(
             `Skipping ${inputFilePath}: Invalid Lexicon format. Errors:`,
@@ -422,15 +418,14 @@ async function main() {
           );
           continue;
         }
-
         const lexiconData = parseResult.data;
+        openAPILexicons.push(lexiconData); // Add to list for OpenAPI
 
-        // sanitize and replace separators
+        // Generate and save Markdown
         const sanitizedId = lexiconData.id
           .toLowerCase()
           .replace(/[^a-z0-9-]/g, config.defaultLexiconSeparator);
-        outputFileName = `${sanitizedId}.md`;
-
+        const outputFileName = `${sanitizedId}.md`;
         const relativePath = path.relative(
           inputDir,
           path.dirname(inputFilePath),
@@ -441,10 +436,7 @@ async function main() {
           outputFileName,
         );
 
-        await fs.mkdir(specificOutputDir, {
-          recursive: true,
-        });
-
+        await fs.mkdir(specificOutputDir, { recursive: true });
         const markdownContent = generateMarkdown(lexiconData);
         await fs.writeFile(specificOutputFilePath, markdownContent);
         console.log(`  -> Generated ${specificOutputFilePath}`);
@@ -459,14 +451,60 @@ async function main() {
       }
     }
 
-    // save to file
-    if (args.length > 2) {
-      console.log("Converting to OpenAPI...");
+    let externalLexicons: BskyLex.LexiconDoc[] = [];
 
-      const restSpec = convertLexiconToOpenAPI(toOpenApi);
-      const outputFilePath = args[2];
-      await fs.writeFile(outputFilePath, JSON.stringify(restSpec, null, 2));
-      console.log("  -> Saved to " + outputFilePath);
+    // Process externalLexDir (OpenAPI only) if provided
+    if (externalLexDir) {
+      const externalDirents: Dirent[] = await fs.readdir(externalLexDir, {
+        withFileTypes: true,
+        recursive: true,
+      });
+      const externalJsonFiles = externalDirents
+        .filter((dirent) => dirent.isFile() && dirent.name.endsWith(".json"))
+        .map((dirent) => path.join(dirent.parentPath, dirent.name));
+
+      console.log(
+        `Found ${externalJsonFiles.length} JSON files in ${externalLexDir} recursively. Processing for OpenAPI...`,
+      );
+
+      for (const inputFilePath of externalJsonFiles) {
+        console.log(`Processing external ${inputFilePath}...`);
+        try {
+          const fileContent = await fs.readFile(inputFilePath, "utf-8");
+          const jsonData = JSON.parse(fileContent);
+
+          // validate
+          const parseResult = BskyLex.lexiconDoc.safeParse(jsonData);
+          if (!parseResult.success) {
+            console.warn(
+              `Skipping external ${inputFilePath}: Invalid Lexicon format. Errors:`,
+              parseResult.error.flatten(),
+            );
+            continue;
+          }
+          const lexiconData = parseResult.data;
+          externalLexicons.push(lexiconData); // Add to list for OpenAPI
+        } catch (error: any) {
+          console.error(
+            `Error processing external file ${inputFilePath}: ${error.message}`,
+          );
+          if (error instanceof SyntaxError) {
+            console.error("   This might be due to invalid JSON format.");
+          }
+          console.error(error.stack);
+        }
+      }
+    }
+
+    // Generate and save OpenAPI spec if path is provided
+    if (openApiPath) {
+      console.log("Converting to OpenAPI...");
+      const restSpec = convertLexiconToOpenAPI(
+        openAPILexicons,
+        externalLexicons,
+      );
+      await fs.writeFile(openApiPath, JSON.stringify(restSpec, null, 2));
+      console.log(`  -> Saved OpenAPI spec to ${openApiPath}`);
     }
 
     console.log("Processing complete.");

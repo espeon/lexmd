@@ -61,7 +61,10 @@ export interface OpenAPISpec {
   };
 }
 
-export function convertLexiconToOpenAPI(lexicons: LexiconDoc[]): OpenAPISpec {
+export function convertLexiconToOpenAPI(
+  lexicons: LexiconDoc[],
+  externalLexicons: LexiconDoc[],
+): OpenAPISpec {
   const spec: OpenAPISpec = {
     openapi: "3.0.3",
     info: {
@@ -76,6 +79,22 @@ export function convertLexiconToOpenAPI(lexicons: LexiconDoc[]): OpenAPISpec {
   };
 
   const schemas = new Map<string, any>();
+
+  // Add external lexicons (just as schemas)
+  for (const lexicon of externalLexicons) {
+    for (const [defName, def] of Object.entries(lexicon.defs)) {
+      if (defName !== "main") {
+        const schemaName = `${lexicon.id}_${defName}`;
+        schemas.set(schemaName, convertTypeToSchema(schemaName, def, schemas));
+      } else {
+        // Add main type as a schema
+        schemas.set(
+          lexicon.id,
+          convertTypeToSchema(lexicon.id, lexicon.defs.main, schemas),
+        );
+      }
+    }
+  }
 
   for (const lexicon of lexicons) {
     const mainDef = lexicon.defs.main;
