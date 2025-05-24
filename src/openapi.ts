@@ -48,6 +48,127 @@ function convertSchemaToOpenAPI(
   }
 }
 
+/**
+ * Recursively traverse a schema object and collect all referenced schema names.
+ * @param schema The schema object to traverse.
+ * @param schemas A map of all available schemas by their generated name.
+ * @param usedSchemas A Set to accumulate the names of schemas that are referenced.
+ * @param visited Schemas already visited during this traversal to prevent infinite loops.
+ */
+function traverseSchema(
+  schema: any,
+  schemas: Map<string, any>,
+  usedSchemas: Set<string>,
+  visited: Set<string>,
+): void {
+  if (!schema || typeof schema !== "object" || visited.has(schema)) {
+    return;
+  }
+  visited.add(schema);
+
+  if (schema.$ref) {
+    const refName = schema.$ref.replace("#/components/schemas/", "");
+    if (!usedSchemas.has(refName)) {
+      usedSchemas.add(refName);
+      // Traverse the referenced schema if it exists in our map
+      if (schemas.has(refName)) {
+        traverseSchema(schemas.get(refName), schemas, usedSchemas, visited);
+      }
+    }
+  } else if (schema.type === "object" && schema.properties) {
+    for (const propName in schema.properties) {
+      traverseSchema(
+        schema.properties[propName],
+        schemas,
+        usedSchemas,
+        visited,
+      );
+    }
+  } else if (schema.type === "array" && schema.items) {
+    traverseSchema(schema.items, schemas, usedSchemas, visited);
+  } else if (schema.oneOf) {
+    if (Array.isArray(schema.oneOf)) {
+      schema.oneOf.forEach((subSchema: any) =>
+        traverseSchema(subSchema, schemas, usedSchemas, visited),
+      );
+    }
+  }
+  // Add more cases here if other schema compositions exist (e.g., anyOf, allOf)
+}
+
+/**
+ * Collects all schema names referenced directly or indirectly from the OpenAPI paths object.
+ * @param paths The OpenAPI paths object.
+ * @param schemas A map of all available schemas by their generated name.
+ * @returns A Set containing the names of all referenced schemas.
+ */
+function collectReferencedSchemas(
+  paths: Record<string, any>,
+  schemas: Map<string, any>,
+): Set<string> {
+  const usedSchemas = new Set<string>();
+  const visited = new Set<string>(); // Track schemas visited during recursive traversal
+
+  for (const path in paths) {
+    for (const method in paths[path]) {
+      const operation = paths[path][method];
+
+      // Check parameters
+      if (operation.parameters) {
+        operation.parameters.forEach((param: any) => {
+          if (param.schema) {
+            traverseSchema(param.schema, schemas, usedSchemas, visited);
+          }
+        });
+      }
+
+      // Check request body
+      if (operation.requestBody && operation.requestBody.content) {
+        for (const mediaType in operation.requestBody.content) {
+          const content = operation.requestBody.content[mediaType];
+          if (content.schema) {
+            traverseSchema(content.schema, schemas, usedSchemas, visited);
+          }
+        }
+      }
+
+      // Check responses
+      if (operation.responses) {
+        for (const statusCode in operation.responses) {
+          const response = operation.responses[statusCode];
+          if (response.content) {
+            for (const mediaType in response.content) {
+              const content = response.content[mediaType];
+              if (content.schema) {
+                traverseSchema(content.schema, schemas, usedSchemas, visited);
+              }
+            }
+          }
+        }
+      }
+
+      // Check x-websocket message schema if it exists
+      if (
+        operation["x-websocket-message"] &&
+        operation["x-websocket-message"].schema
+      ) {
+        traverseSchema(
+          operation["x-websocket-message"].schema,
+          schemas,
+          usedSchemas,
+          visited,
+        );
+      }
+    }
+  }
+
+  // After initial pass, ensure all recursively referenced schemas are included
+  // This is implicitly handled by the recursive `traverseSchema` function
+  // calling itself on referenced schemas, so no extra loop needed here.
+
+  return usedSchemas;
+}
+
 export interface OpenAPISpec {
   openapi: string;
   info: {
@@ -123,8 +244,19 @@ export function convertLexiconToOpenAPI(
     }
   }
 
-  // Add all collected schemas to components
-  spec.components!.schemas = Object.fromEntries(schemas);
+  // Collect all schemas referenced from paths and recursively from those schemas
+  const usedSchemaNames = collectReferencedSchemas(spec.paths, schemas);
+
+  // Filter the schemas map to only include the used schemas
+  const filteredSchemas = new Map<string, any>();
+  for (const schemaName of usedSchemaNames) {
+    if (schemas.has(schemaName)) {
+      filteredSchemas.set(schemaName, schemas.get(schemaName));
+    }
+  }
+
+  // Add filtered schemas to components
+  spec.components!.schemas = Object.fromEntries(filteredSchemas);
 
   return spec;
 }
