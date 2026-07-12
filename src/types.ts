@@ -417,34 +417,47 @@ export const lexUserType = z.custom<
 );
 export type LexUserType = z.infer<typeof lexUserType>;
 
-export const lexiconDoc = z
-  .object({
-    lexicon: z.literal(1),
-    id: z.string().refine((v: string) => NSID.isValid(v), {
-      message: "Must be a valid NSID",
-    }),
-    revision: z.number().optional(),
-    description: z.string().optional(),
-    defs: z.record(lexUserType),
-  })
-  .strict()
-  .superRefine((doc, ctx) => {
-    for (const defId in doc.defs) {
-      const def = doc.defs[defId];
-      if (
-        defId !== "main" &&
-        (def.type === "record" ||
-          def.type === "procedure" ||
-          def.type === "query" ||
-          def.type === "subscription")
-      ) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: `Records, procedures, queries, and subscriptions must be the main definition.`,
-        });
-      }
+export const lexiconDoc = z.preprocess(
+  (val) => {
+    // Lexicons vendored from the network (e.g. by `lex install`) are atproto
+    // records and carry a top-level `$type: "com.atproto.lexicon.schema"`;
+    // it's not part of the lexicon document schema itself, so drop it before
+    // strict validation.
+    if (isObj(val) && "$type" in val) {
+      const { $type, ...rest } = val as Record<string, unknown>;
+      return rest;
     }
-  });
+    return val;
+  },
+  z
+    .object({
+      lexicon: z.literal(1),
+      id: z.string().refine((v: string) => NSID.isValid(v), {
+        message: "Must be a valid NSID",
+      }),
+      revision: z.number().optional(),
+      description: z.string().optional(),
+      defs: z.record(lexUserType),
+    })
+    .strict()
+    .superRefine((doc, ctx) => {
+      for (const defId in doc.defs) {
+        const def = doc.defs[defId];
+        if (
+          defId !== "main" &&
+          (def.type === "record" ||
+            def.type === "procedure" ||
+            def.type === "query" ||
+            def.type === "subscription")
+        ) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: `Records, procedures, queries, and subscriptions must be the main definition.`,
+          });
+        }
+      }
+    }),
+);
 export type LexiconDoc = z.infer<typeof lexiconDoc>;
 
 // helpers
