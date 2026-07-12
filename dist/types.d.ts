@@ -15356,7 +15356,7 @@ export declare const lexUserType: z.ZodType<{
     key?: string | undefined;
 }>;
 export type LexUserType = z.infer<typeof lexUserType>;
-export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
+export declare const lexiconDoc: z.ZodEffects<z.ZodEffects<z.ZodObject<{
     lexicon: z.ZodLiteral<1>;
     id: z.ZodEffects<z.ZodString, string, string>;
     revision: z.ZodOptional<z.ZodNumber>;
@@ -21728,7 +21728,1070 @@ export declare const lexiconDoc: z.ZodEffects<z.ZodObject<{
     }>;
     description?: string | undefined;
     revision?: number | undefined;
-}>;
+}>, {
+    lexicon: 1;
+    id: string;
+    defs: Record<string, {
+        type: "boolean";
+        default?: boolean | undefined;
+        description?: string | undefined;
+        const?: boolean | undefined;
+    } | {
+        type: "integer";
+        default?: number | undefined;
+        minimum?: number | undefined;
+        maximum?: number | undefined;
+        description?: string | undefined;
+        enum?: number[] | undefined;
+        const?: number | undefined;
+    } | {
+        type: "string";
+        default?: string | undefined;
+        description?: string | undefined;
+        minLength?: number | undefined;
+        maxLength?: number | undefined;
+        enum?: string[] | undefined;
+        const?: string | undefined;
+        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+        minGraphemes?: number | undefined;
+        maxGraphemes?: number | undefined;
+        knownValues?: string[] | undefined;
+    } | {
+        type: "unknown";
+        description?: string | undefined;
+    } | {
+        type: "bytes";
+        description?: string | undefined;
+        minLength?: number | undefined;
+        maxLength?: number | undefined;
+    } | {
+        type: "cid-link";
+        description?: string | undefined;
+    } | {
+        type: "blob";
+        description?: string | undefined;
+        maxSize?: number | undefined;
+        accept?: string[] | undefined;
+    } | {
+        type: "array";
+        items: {
+            type: "boolean";
+            default?: boolean | undefined;
+            description?: string | undefined;
+            const?: boolean | undefined;
+        } | {
+            type: "integer";
+            default?: number | undefined;
+            minimum?: number | undefined;
+            maximum?: number | undefined;
+            description?: string | undefined;
+            enum?: number[] | undefined;
+            const?: number | undefined;
+        } | {
+            type: "string";
+            default?: string | undefined;
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+            minGraphemes?: number | undefined;
+            maxGraphemes?: number | undefined;
+            knownValues?: string[] | undefined;
+        } | {
+            type: "unknown";
+            description?: string | undefined;
+        } | {
+            type: "bytes";
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+        } | {
+            type: "cid-link";
+            description?: string | undefined;
+        } | {
+            type: "ref";
+            ref: string;
+            description?: string | undefined;
+        } | {
+            type: "union";
+            refs: string[];
+            description?: string | undefined;
+            closed?: boolean | undefined;
+        } | {
+            type: "blob";
+            description?: string | undefined;
+            maxSize?: number | undefined;
+            accept?: string[] | undefined;
+        };
+        description?: string | undefined;
+        minLength?: number | undefined;
+        maxLength?: number | undefined;
+    } | {
+        type: "token";
+        description?: string | undefined;
+    } | {
+        type: "object";
+        properties: Record<string, {
+            type: "boolean";
+            default?: boolean | undefined;
+            description?: string | undefined;
+            const?: boolean | undefined;
+        } | {
+            type: "integer";
+            default?: number | undefined;
+            minimum?: number | undefined;
+            maximum?: number | undefined;
+            description?: string | undefined;
+            enum?: number[] | undefined;
+            const?: number | undefined;
+        } | {
+            type: "string";
+            default?: string | undefined;
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+            enum?: string[] | undefined;
+            const?: string | undefined;
+            format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+            minGraphemes?: number | undefined;
+            maxGraphemes?: number | undefined;
+            knownValues?: string[] | undefined;
+        } | {
+            type: "unknown";
+            description?: string | undefined;
+        } | {
+            type: "bytes";
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+        } | {
+            type: "cid-link";
+            description?: string | undefined;
+        } | {
+            type: "ref";
+            ref: string;
+            description?: string | undefined;
+        } | {
+            type: "union";
+            refs: string[];
+            description?: string | undefined;
+            closed?: boolean | undefined;
+        } | {
+            type: "blob";
+            description?: string | undefined;
+            maxSize?: number | undefined;
+            accept?: string[] | undefined;
+        } | {
+            type: "array";
+            items: {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "bytes";
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            } | {
+                type: "cid-link";
+                description?: string | undefined;
+            } | {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "blob";
+                description?: string | undefined;
+                maxSize?: number | undefined;
+                accept?: string[] | undefined;
+            };
+            description?: string | undefined;
+            minLength?: number | undefined;
+            maxLength?: number | undefined;
+        }>;
+        required?: string[] | undefined;
+        description?: string | undefined;
+        nullable?: string[] | undefined;
+    } | {
+        type: "query";
+        description?: string | undefined;
+        output?: {
+            encoding: string;
+            description?: string | undefined;
+            schema?: {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "object";
+                properties: Record<string, {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                } | {
+                    type: "array";
+                    items: {
+                        type: "boolean";
+                        default?: boolean | undefined;
+                        description?: string | undefined;
+                        const?: boolean | undefined;
+                    } | {
+                        type: "integer";
+                        default?: number | undefined;
+                        minimum?: number | undefined;
+                        maximum?: number | undefined;
+                        description?: string | undefined;
+                        enum?: number[] | undefined;
+                        const?: number | undefined;
+                    } | {
+                        type: "string";
+                        default?: string | undefined;
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                        minGraphemes?: number | undefined;
+                        maxGraphemes?: number | undefined;
+                        knownValues?: string[] | undefined;
+                    } | {
+                        type: "unknown";
+                        description?: string | undefined;
+                    } | {
+                        type: "bytes";
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                    } | {
+                        type: "cid-link";
+                        description?: string | undefined;
+                    } | {
+                        type: "ref";
+                        ref: string;
+                        description?: string | undefined;
+                    } | {
+                        type: "union";
+                        refs: string[];
+                        description?: string | undefined;
+                        closed?: boolean | undefined;
+                    } | {
+                        type: "blob";
+                        description?: string | undefined;
+                        maxSize?: number | undefined;
+                        accept?: string[] | undefined;
+                    };
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                }>;
+                required?: string[] | undefined;
+                description?: string | undefined;
+                nullable?: string[] | undefined;
+            } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+        } | undefined;
+        errors?: {
+            name: string;
+            description?: string | undefined;
+        }[] | undefined;
+    } | {
+        type: "procedure";
+        input?: {
+            encoding: string;
+            description?: string | undefined;
+            schema?: {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "object";
+                properties: Record<string, {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                } | {
+                    type: "array";
+                    items: {
+                        type: "boolean";
+                        default?: boolean | undefined;
+                        description?: string | undefined;
+                        const?: boolean | undefined;
+                    } | {
+                        type: "integer";
+                        default?: number | undefined;
+                        minimum?: number | undefined;
+                        maximum?: number | undefined;
+                        description?: string | undefined;
+                        enum?: number[] | undefined;
+                        const?: number | undefined;
+                    } | {
+                        type: "string";
+                        default?: string | undefined;
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                        minGraphemes?: number | undefined;
+                        maxGraphemes?: number | undefined;
+                        knownValues?: string[] | undefined;
+                    } | {
+                        type: "unknown";
+                        description?: string | undefined;
+                    } | {
+                        type: "bytes";
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                    } | {
+                        type: "cid-link";
+                        description?: string | undefined;
+                    } | {
+                        type: "ref";
+                        ref: string;
+                        description?: string | undefined;
+                    } | {
+                        type: "union";
+                        refs: string[];
+                        description?: string | undefined;
+                        closed?: boolean | undefined;
+                    } | {
+                        type: "blob";
+                        description?: string | undefined;
+                        maxSize?: number | undefined;
+                        accept?: string[] | undefined;
+                    };
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                }>;
+                required?: string[] | undefined;
+                description?: string | undefined;
+                nullable?: string[] | undefined;
+            } | undefined;
+        } | undefined;
+        description?: string | undefined;
+        output?: {
+            encoding: string;
+            description?: string | undefined;
+            schema?: {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "object";
+                properties: Record<string, {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                } | {
+                    type: "array";
+                    items: {
+                        type: "boolean";
+                        default?: boolean | undefined;
+                        description?: string | undefined;
+                        const?: boolean | undefined;
+                    } | {
+                        type: "integer";
+                        default?: number | undefined;
+                        minimum?: number | undefined;
+                        maximum?: number | undefined;
+                        description?: string | undefined;
+                        enum?: number[] | undefined;
+                        const?: number | undefined;
+                    } | {
+                        type: "string";
+                        default?: string | undefined;
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                        minGraphemes?: number | undefined;
+                        maxGraphemes?: number | undefined;
+                        knownValues?: string[] | undefined;
+                    } | {
+                        type: "unknown";
+                        description?: string | undefined;
+                    } | {
+                        type: "bytes";
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                    } | {
+                        type: "cid-link";
+                        description?: string | undefined;
+                    } | {
+                        type: "ref";
+                        ref: string;
+                        description?: string | undefined;
+                    } | {
+                        type: "union";
+                        refs: string[];
+                        description?: string | undefined;
+                        closed?: boolean | undefined;
+                    } | {
+                        type: "blob";
+                        description?: string | undefined;
+                        maxSize?: number | undefined;
+                        accept?: string[] | undefined;
+                    };
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                }>;
+                required?: string[] | undefined;
+                description?: string | undefined;
+                nullable?: string[] | undefined;
+            } | undefined;
+        } | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+        } | undefined;
+        errors?: {
+            name: string;
+            description?: string | undefined;
+        }[] | undefined;
+    } | {
+        type: "subscription";
+        message?: {
+            description?: string | undefined;
+            schema?: {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "object";
+                properties: Record<string, {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                } | {
+                    type: "array";
+                    items: {
+                        type: "boolean";
+                        default?: boolean | undefined;
+                        description?: string | undefined;
+                        const?: boolean | undefined;
+                    } | {
+                        type: "integer";
+                        default?: number | undefined;
+                        minimum?: number | undefined;
+                        maximum?: number | undefined;
+                        description?: string | undefined;
+                        enum?: number[] | undefined;
+                        const?: number | undefined;
+                    } | {
+                        type: "string";
+                        default?: string | undefined;
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                        enum?: string[] | undefined;
+                        const?: string | undefined;
+                        format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                        minGraphemes?: number | undefined;
+                        maxGraphemes?: number | undefined;
+                        knownValues?: string[] | undefined;
+                    } | {
+                        type: "unknown";
+                        description?: string | undefined;
+                    } | {
+                        type: "bytes";
+                        description?: string | undefined;
+                        minLength?: number | undefined;
+                        maxLength?: number | undefined;
+                    } | {
+                        type: "cid-link";
+                        description?: string | undefined;
+                    } | {
+                        type: "ref";
+                        ref: string;
+                        description?: string | undefined;
+                    } | {
+                        type: "union";
+                        refs: string[];
+                        description?: string | undefined;
+                        closed?: boolean | undefined;
+                    } | {
+                        type: "blob";
+                        description?: string | undefined;
+                        maxSize?: number | undefined;
+                        accept?: string[] | undefined;
+                    };
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                }>;
+                required?: string[] | undefined;
+                description?: string | undefined;
+                nullable?: string[] | undefined;
+            } | undefined;
+        } | undefined;
+        description?: string | undefined;
+        parameters?: {
+            type: "params";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+        } | undefined;
+        errors?: {
+            name: string;
+            description?: string | undefined;
+        }[] | undefined;
+    } | {
+        type: "record";
+        record: {
+            type: "object";
+            properties: Record<string, {
+                type: "boolean";
+                default?: boolean | undefined;
+                description?: string | undefined;
+                const?: boolean | undefined;
+            } | {
+                type: "integer";
+                default?: number | undefined;
+                minimum?: number | undefined;
+                maximum?: number | undefined;
+                description?: string | undefined;
+                enum?: number[] | undefined;
+                const?: number | undefined;
+            } | {
+                type: "string";
+                default?: string | undefined;
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+                enum?: string[] | undefined;
+                const?: string | undefined;
+                format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                minGraphemes?: number | undefined;
+                maxGraphemes?: number | undefined;
+                knownValues?: string[] | undefined;
+            } | {
+                type: "unknown";
+                description?: string | undefined;
+            } | {
+                type: "bytes";
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            } | {
+                type: "cid-link";
+                description?: string | undefined;
+            } | {
+                type: "ref";
+                ref: string;
+                description?: string | undefined;
+            } | {
+                type: "union";
+                refs: string[];
+                description?: string | undefined;
+                closed?: boolean | undefined;
+            } | {
+                type: "blob";
+                description?: string | undefined;
+                maxSize?: number | undefined;
+                accept?: string[] | undefined;
+            } | {
+                type: "array";
+                items: {
+                    type: "boolean";
+                    default?: boolean | undefined;
+                    description?: string | undefined;
+                    const?: boolean | undefined;
+                } | {
+                    type: "integer";
+                    default?: number | undefined;
+                    minimum?: number | undefined;
+                    maximum?: number | undefined;
+                    description?: string | undefined;
+                    enum?: number[] | undefined;
+                    const?: number | undefined;
+                } | {
+                    type: "string";
+                    default?: string | undefined;
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                    enum?: string[] | undefined;
+                    const?: string | undefined;
+                    format?: "language" | "datetime" | "uri" | "at-uri" | "did" | "handle" | "at-identifier" | "nsid" | "cid" | "tid" | "record-key" | undefined;
+                    minGraphemes?: number | undefined;
+                    maxGraphemes?: number | undefined;
+                    knownValues?: string[] | undefined;
+                } | {
+                    type: "unknown";
+                    description?: string | undefined;
+                } | {
+                    type: "bytes";
+                    description?: string | undefined;
+                    minLength?: number | undefined;
+                    maxLength?: number | undefined;
+                } | {
+                    type: "cid-link";
+                    description?: string | undefined;
+                } | {
+                    type: "ref";
+                    ref: string;
+                    description?: string | undefined;
+                } | {
+                    type: "union";
+                    refs: string[];
+                    description?: string | undefined;
+                    closed?: boolean | undefined;
+                } | {
+                    type: "blob";
+                    description?: string | undefined;
+                    maxSize?: number | undefined;
+                    accept?: string[] | undefined;
+                };
+                description?: string | undefined;
+                minLength?: number | undefined;
+                maxLength?: number | undefined;
+            }>;
+            required?: string[] | undefined;
+            description?: string | undefined;
+            nullable?: string[] | undefined;
+        };
+        description?: string | undefined;
+        key?: string | undefined;
+    }>;
+    description?: string | undefined;
+    revision?: number | undefined;
+}, unknown>;
 export type LexiconDoc = z.infer<typeof lexiconDoc>;
 export declare function isValidLexiconDoc(v: unknown): v is LexiconDoc;
 export declare function isObj<V>(v: V): v is V & object;

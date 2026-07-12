@@ -1,4 +1,15 @@
 // Taken from https://github.com/bluesky-social/atproto/blob/main/packages/lexicon/src/types.ts
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 import { z } from "zod";
 import { NSID } from "@atproto/syntax";
 import { requiredPropertiesRefinement } from "./util.js";
@@ -316,7 +327,17 @@ export const lexUserType = z.custom((val) => {
         fatal: true,
     };
 });
-export const lexiconDoc = z
+export const lexiconDoc = z.preprocess((val) => {
+    // Lexicons vendored from the network (e.g. by `lex install`) are atproto
+    // records and carry a top-level `$type: "com.atproto.lexicon.schema"`;
+    // it's not part of the lexicon document schema itself, so drop it before
+    // strict validation.
+    if (isObj(val) && "$type" in val) {
+        const _a = val, { $type } = _a, rest = __rest(_a, ["$type"]);
+        return rest;
+    }
+    return val;
+}, z
     .object({
     lexicon: z.literal(1),
     id: z.string().refine((v) => NSID.isValid(v), {
@@ -341,7 +362,7 @@ export const lexiconDoc = z
             });
         }
     }
-});
+}));
 // helpers
 // =
 export function isValidLexiconDoc(v) {

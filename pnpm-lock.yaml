@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  lexmd: link:../../Library/pnpm/global/5/node_modules/lexmd
-
 importers:
 
   .:
@@ -14,9 +11,6 @@ importers:
       '@atproto/syntax':
         specifier: ^0.4.0
         version: 0.4.0
-      lexmd:
-        specifier: link:../../Library/pnpm/global/5/node_modules/lexmd
-        version: link:../../Library/pnpm/global/5/node_modules/lexmd
       zod:
         specifier: ^3.24.3
         version: 3.24.3
